@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>No Crying IG — @tracey.contentworks</title>
+<title>No Crying IG · @tracey.contentworks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -141,7 +141,7 @@
     line-height: 1.65;
   }
 
-  /* STATS — full images, no crop */
+  /* STATS: full images, no crop */
   .stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -425,6 +425,75 @@
     .gift-terms-row { flex-direction: column; align-items: flex-start; gap: 4px; }
     .gift-terms-val { text-align: left; }
   }
+
+  /* OPPORTUNITY: IG x SHOPEE */
+  .opp {
+    border-left: 3px solid var(--accent);
+    background: rgba(198, 230, 92, 0.045);
+    padding: 34px 32px;
+    margin-top: 8px;
+  }
+  .opp-tag {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; display: block; margin-bottom: 16px;
+  }
+  .opp-list { list-style: none; margin: 20px 0 0; display: flex; flex-direction: column; gap: 13px; }
+  .opp-list li {
+    font-size: 15px; color: rgba(248,247,245,0.8); line-height: 1.65;
+    padding-left: 22px; position: relative;
+  }
+  .opp-list li::before {
+    content: '+'; position: absolute; left: 0; top: 0;
+    color: var(--accent); font-weight: 600;
+  }
+  .opp-kick {
+    margin-top: 26px; padding-top: 22px;
+    border-top: 1px solid rgba(198,230,92,0.22);
+    font-family: 'DM Serif Display', serif;
+    font-size: 21px; line-height: 1.45; color: var(--light);
+  }
+
+  /* GIFT: chia phần */
+  .gift-n {
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(248,247,245,0.32); font-weight: 600; display: block; margin-bottom: 12px;
+  }
+  .gift-split {
+    margin: 40px 0 0; padding-top: 36px;
+    border-top: 1px solid rgba(198,230,92,0.22);
+  }
+  .gift-value {
+    display: inline-block; margin-top: 18px;
+    font-size: 13px; color: rgba(248,247,245,0.5);
+    border: 1px solid rgba(248,247,245,0.12);
+    padding: 9px 16px;
+  }
+  .gift-value b { color: var(--accent); font-weight: 600; }
+
+  /* QUALIFY QUESTIONS */
+  .qz { list-style: none; counter-reset: q; margin-top: 30px; }
+  .qz li {
+    counter-increment: q;
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(248,247,245,0.07);
+  }
+  .qz li:last-child { border-bottom: none; }
+  .qz li::before {
+    content: counter(q, decimal-leading-zero);
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px; color: var(--accent); opacity: 0.5;
+    line-height: 1.2; flex-shrink: 0; min-width: 38px;
+  }
+  .qz-q { font-size: 17px; color: var(--light); font-weight: 500; line-height: 1.6; margin: 0 0 6px; }
+  .qz-note { font-size: 14px; color: rgba(248,247,245,0.45); line-height: 1.7; margin: 0; }
+  @media (max-width: 600px) {
+    .opp { padding: 26px 20px; }
+    .opp-kick { font-size: 18px; }
+    .qz li { gap: 14px; }
+    .qz li::before { font-size: 21px; min-width: 28px; }
+    .qz-q { font-size: 16px; }
+  }
 </style>
 </head>
 <body>
@@ -463,6 +532,25 @@
       <li>Muốn xây kênh nghiêm túc, muốn được brand tìm đến, muốn kênh đủ mạnh để tạo ra cơ hội, nhưng không biết phải làm gì để thoát khỏi ngưỡng đang kẹt.</li>
       <li>Kênh đang ổn nhưng bạn biết nó vẫn chưa đến nơi mình muốn. Và bạn không biết bước tiếp theo là gì.</li>
     </ul>
+  </div>
+</div>
+
+<!-- OPPORTUNITY -->
+<div class="wrap">
+  <div class="section" style="padding-top: 0;">
+    <div class="divider"></div>
+    <h2>Và đây là thứ đang xảy ra <em>ngay lúc này.</em></h2>
+    <div class="opp">
+      <span class="opp-tag">Instagram x Shopee</span>
+      <p>Instagram đang mở rộng, bắt tay với Shopee và đẩy hoa hồng Shopee qua Instagram rất mạnh.</p>
+      <ul class="opp-list">
+        <li>Bây giờ bạn không cần đúng hình ảnh sản phẩm mới gắn được giỏ hàng.</li>
+        <li>Miễn kênh bạn mở được liên kết với Shopee, bất cứ bài đăng nào của bạn cũng gắn được link sản phẩm.</li>
+        <li>Những năm trước không hề có chuyện này.</li>
+      </ul>
+      <p style="margin-top: 20px;">Nên mọi người đang đổ xô sang Instagram. Đó cũng là lý do sân chơi này sẽ chật hơn từng tháng.</p>
+      <p class="opp-kick">Nếu bạn biết cách hack trò chơi này và build kênh của mình lên nhanh nhất có thể, bạn có muốn cầm nó ngay bây giờ không?</p>
+    </div>
   </div>
 </div>
 
@@ -662,7 +750,8 @@
   <div class="section" style="padding-top: 0;">
     <div class="divider"></div>
     <div class="gift">
-      <span class="gift-flag">Quà tặng · chỉ 6 người</span>
+      <span class="gift-flag">2 quà tặng · chỉ 6 người</span>
+      <span class="gift-n">Quà 01</span>
       <h3>Skill viết content viral <em>và ra slide sẵn</em> cho bạn.</h3>
 
       <p class="gift-quote">Mình biết cách viral. Mình chỉ lười ngồi làm slide.</p>
@@ -697,6 +786,15 @@
       </ul>
       <p style="margin-top: 18px;">Mình đóng gói sẵn skill này. Bạn tải về là làm được liền.</p>
 
+      <div class="gift-split">
+        <span class="gift-n">Quà 02</span>
+        <h3>3 tháng mentor 1-1 <em>tới hết năm.</em></h3>
+        <p>Quà này mình không tặng đại trà. Nó chỉ dành cho bạn nào đã xác định rõ: năm 2027 của mình sẽ có một cái kênh ổn, khoẻ, đủ follow để tự làm bất cứ thứ gì mình muốn với nó.</p>
+        <p>Làm affiliate, xây thương hiệu cá nhân, hay có tiếng nói trong một lĩnh vực nào đó. Tất cả đều hoàn toàn khả thi, và mình sẽ đi cùng bạn phần đó.</p>
+        <p>3 tháng mình đồng hành với bạn trong lúc bạn đăng bài. Bạn đăng, mình nhìn, mình chỉnh cùng bạn. Không thêm một đồng nào.</p>
+        <span class="gift-value">Mentor kiểu này bên ngoài là <b>vài chục triệu</b>. Ở đây là <b>0đ</b>.</span>
+      </div>
+
       <div class="gift-terms">
         <div class="gift-terms-row">
           <span class="gift-terms-key">Số người</span>
@@ -710,7 +808,7 @@
           <span class="gift-terms-key">Sau đó</span>
           <span class="gift-terms-val">Đi kèm khoá viral · 3.500.000đ</span>
         </div>
-        <p class="gift-after">Mình biết skill này sẽ làm sự cạnh tranh tăng lên, nên mình chỉ để cho 6 bạn trong tuần này. Qua tuần, ai muốn có skill vẫn được, nhưng nó sẽ đi kèm khoá viral của mình chứ không tặng riêng nữa. Bạn đăng ký sớm thì mình public thông tin trên story để mọi người dễ theo dõi.</p>
+        <p class="gift-after">Mình biết hai thứ này sẽ làm sự cạnh tranh tăng lên, nên mình chỉ để cho 6 bạn trong tuần này. Qua tuần, ai muốn có skill vẫn được, nhưng nó sẽ đi kèm khoá viral của mình chứ không tặng riêng nữa. Bạn đăng ký sớm thì mình public thông tin trên story để mọi người dễ theo dõi.</p>
       </div>
     </div>
   </div>
@@ -733,7 +831,8 @@
         <li>Demo và ví dụ thực tế</li>
         <li>Guideline hướng dẫn, file tài liệu để nhân viên marketing bạn thuê có thể tự xử lý, mình sẽ cập nhật nếu có điều cần chỉnh sửa trong kênh</li>
         <li>Storytelling support nếu brand có câu chuyện muốn khai thác, không thêm phí</li>
-        <li><strong>Tặng kèm skill làm content viral và ra slide sẵn, chỉ cho 6 bạn đăng ký trong tuần này</strong></li>
+        <li><strong>Tặng kèm skill làm content viral và ra slide sẵn</strong></li>
+        <li><strong>Tặng kèm 3 tháng mentor 1-1 tới hết năm, không thêm phí</strong></li>
       </ul>
     </div>
 
@@ -741,46 +840,54 @@
   </div>
 </div>
 
-<!-- FAQs -->
+<!-- QUALIFY -->
 <div class="wrap">
   <div class="section" style="padding-top: 0;">
     <div class="divider"></div>
-    <h2>Có thể bạn đang nghĩ...</h2>
+    <h2>Trước khi bạn quyết định học.</h2>
+    <p>Cái mình dạy không phải tips. Mình mất gần một năm để hiểu ra nó, và nói thật, không phải ai cũng làm được. Có tiền không có nghĩa là học được.</p>
+    <p>Mình muốn chọn người thật sự muốn làm. Nên trước khi nhắn cho mình, bạn ngồi xuống và tự trả lời mấy câu dưới đây. Bạn không cần gửi câu trả lời cho mình. Bạn chỉ cần trả lời thật với chính bạn.</p>
 
-    <div class="faq">
-      <p class="faq-q">"Em học nhiều rồi, học thêm để làm gì?"</p>
-      <p class="faq-a">Tips thì ở đâu cũng có. Lưu cả đống how-to, checklist, todo list xây kênh rồi vẫn không biết bắt đầu từ đâu. Cái mình dạy không phải tips. Là nguyên lý bao trùm. Hiểu cơ chế rồi thì không cần lưu thêm bất cứ cái gì nữa.</p>
-    </div>
+    <ul class="qz">
+      <li>
+        <div>
+          <p class="qz-q">Bạn đã thất bại với việc xây kênh bao nhiêu lần rồi?</p>
+          <p class="qz-note">Trong bao nhiêu năm? Đếm thử đi. Con số đó nói cho bạn nhiều hơn bạn nghĩ.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="qz-q">Bạn định làm gì với nền tảng này?</p>
+          <p class="qz-note">Affiliate, KOC, bán khoá học, thương hiệu cá nhân, hay một thứ gì khác. Gọi tên nó ra, đừng để nó mơ hồ.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="qz-q">Bạn có thật sự muốn làm nó chưa?</p>
+          <p class="qz-note">Ngay lúc này. Không phải một ngày nào đó, không phải khi rảnh hơn, không phải sang năm.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="qz-q">Chưa nói tới tiền. Bạn đã mất bao nhiêu thời gian rồi?</p>
+          <p class="qz-note">Bao nhiêu cơ hội đã trôi qua, trong khi đáng lẽ bạn đã build được kênh từ lâu lắm rồi mà vẫn không làm được.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="qz-q">Bạn đã bỏ qua những cơ hội kiếm tiền nào từ mạng xã hội, chỉ vì bạn không biết cách?</p>
+          <p class="qz-note">Không phải vì bạn lười. Chỉ là không ai chỉ cho bạn cơ chế đằng sau nó.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="qz-q">Bạn có nghĩ một ngày nào đó mạng xã hội sẽ biến mất không?</p>
+          <p class="qz-note">Hay nó chỉ ngày càng lớn hơn, mở rộng hơn, và người vào sau càng phải trả giá đắt hơn để có chỗ đứng.</p>
+        </div>
+      </li>
+    </ul>
 
-    <div class="faq">
-      <p class="faq-q">"Thuê người làm social cho rồi, mắc công."</p>
-      <p class="faq-a">Nếu bạn có 10 triệu mỗi tháng cho người fullstack, thiết kế, content, quay video. Một năm là 120 triệu. Câu hỏi là: sau 120 triệu đó, có cả triệu người lạ biết đến brand của bạn mỗi tháng chưa? Vấn đề không phải thiếu người làm. Là không ai yêu brand của bạn như chính bạn.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">"Người bận như em sao theo nổi?"</p>
-      <p class="faq-a">3 module trong 1 buổi coaching 2 tiếng. Chỉ vậy thôi. Toàn bộ 6 ngày đầu mình kèm cặp cùng bạn. 1 tháng để hỏi bất cứ lúc nào. Không cần làm liên tục.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">"Em không muốn trở thành content creator."</p>
-      <p class="faq-a">Mình cũng vậy. Mình không dạy bạn làm content creator. Mình dạy bạn cách cầm kênh này đúng mục tiêu của bạn, dù đó là bán hàng, xây thương hiệu cá nhân, hay làm KOC/KOL. Làm đúng trọng tâm, ít mà đúng.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">"Chắc lại flop như mấy lần trước thôi."</p>
-      <p class="faq-a">Nếu mấy lần trước flop là vì không biết tại sao thì lần này mình dạy đúng cái đó. Không phải làm nhiều hơn. Là làm đúng hơn.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">"Em muốn làm KOC/KOL nhưng chưa có đủ followers."</p>
-      <p class="faq-a">Số followers không phải thứ brand nhìn vào đầu tiên. Họ nhìn vào chất lượng tệp, mức độ tương tác, và kênh có đang đẩy đúng người không. Đó là thứ mình sẽ dạy bạn xây từ đầu, đúng cách.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">"Em có chạy ads rồi, cũng có đơn, nhưng không nhiều."</p>
-      <p class="faq-a">Ads cho bạn đơn khi bạn có tiền. Organic viral cho bạn đơn khi bạn không chạy gì cả. Ads ăn budget của bạn từng giây, từng phút, từng ngày. Bạn chọn cái nào?</p>
-    </div>
+    <p style="margin-top: 34px;">Trả lời xong mà bạn thấy rõ câu trả lời của mình, thì nhắn cho mình. Còn nếu chưa rõ, cứ để đó đã. Mình không muốn dạy một người chưa thật sự muốn học.</p>
   </div>
 </div>
 
