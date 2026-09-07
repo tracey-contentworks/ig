@@ -528,6 +528,36 @@
     border-top: 1px solid rgba(198,230,92,0.22);
   }
   @media (max-width: 600px) { .core { padding: 26px 20px; } }
+
+  /* RECAP: tuần này vs sau tuần này */
+  .recap { margin-top: 34px; padding-top: 30px; border-top: 1px solid rgba(198,230,92,0.22); }
+  .recap-box { border: 1px solid rgba(198,230,92,0.35); background: rgba(198,230,92,0.06); padding: 28px 26px; }
+  .recap-box.after { border-color: rgba(248,247,245,0.1); background: rgba(248,247,245,0.03); margin-top: 14px; }
+  .recap-ttl {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; display: block; margin-bottom: 18px;
+  }
+  .recap-box.after .recap-ttl { color: rgba(248,247,245,0.35); }
+  .recap-line {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    padding: 10px 0; border-bottom: 1px solid rgba(248,247,245,0.07);
+    font-size: 14px; color: rgba(248,247,245,0.75); line-height: 1.55;
+  }
+  .recap-line:last-of-type { border-bottom: none; }
+  .recap-line i { font-style: normal; color: var(--accent); font-size: 12px; white-space: nowrap; flex-shrink: 0; }
+  .recap-box.after .recap-line i { color: rgba(248,247,245,0.4); }
+  .recap-sum {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(198,230,92,0.28);
+  }
+  .recap-box.after .recap-sum { border-top-color: rgba(248,247,245,0.1); }
+  .recap-sum span { font-size: 13px; color: rgba(248,247,245,0.5); }
+  .recap-sum b { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 34px; color: var(--accent); line-height: 1; }
+  .recap-box.after .recap-sum b { color: rgba(248,247,245,0.8); font-size: 26px; }
+  @media (max-width: 600px) {
+    .recap-box { padding: 22px 18px; }
+    .recap-line { flex-direction: column; gap: 3px; }
+  }
 </style>
 </head>
 <body>
@@ -804,7 +834,7 @@
       </li>
       <li>
         <span class="bonus-name">Support 1 tháng qua chat, voice, meeting</span>
-        <span class="bonus-tag">tuần này: nâng lên 3 tháng</span>
+        <span class="bonus-tag">hỏi bất cứ lúc nào</span>
       </li>
       <li>
         <span class="bonus-name">Guideline hướng dẫn, file tài liệu để nhân viên marketing bạn thuê có thể tự xử lý, mình sẽ cập nhật nếu có điều cần chỉnh sửa trong kênh</span>
@@ -818,12 +848,39 @@
   </div>
 </div>
 
+<!-- PRICING -->
+<div class="wrap">
+  <div class="section" style="padding-top: 0;">
+    <div class="divider center"></div>
+    <h2 style="text-align: center;">Chi phí.</h2>
+
+    <div class="price-box">
+      <span class="price-lbl">No Crying IG · Trọn gói</span>
+      <div class="price-num">2.500.000đ</div>
+      <p class="price-note">Một lần duy nhất</p>
+      <ul class="price-includes">
+        <li>3 module trong 1 buổi coaching 2 tiếng</li>
+        <li>1 tháng coaching và support 1-1 qua chat, voice</li>
+        <li>Checklist thực tế làm được liền sau buổi học</li>
+        <li>Demo và ví dụ thực tế</li>
+        <li>Guideline hướng dẫn, file tài liệu để nhân viên marketing bạn thuê có thể tự xử lý, mình sẽ cập nhật nếu có điều cần chỉnh sửa trong kênh</li>
+        <li>Storytelling support nếu brand có câu chuyện muốn khai thác, không thêm phí</li>
+      </ul>
+    </div>
+
+    <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);">2.5 triệu = chưa đầy 5 ngày bạn chạy ads 500k/ngày.<br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
+    <p style="text-align: center; margin-top: 20px; font-size: 15px; color: rgba(248,247,245,0.72);">Đó là giá của nguyên khoá. Chưa nâng cấp gì, chưa tặng kèm gì.<br><strong style="color: var(--accent);">Còn tuần này thì khác một chút.</strong></p>
+  </div>
+</div>
+
 <!-- GIFT / BONUS SKILL -->
 <div class="wrap">
   <div class="section" style="padding-top: 0;">
     <div class="divider"></div>
+    <h2>2 quà tặng, <em>chỉ cho 6 bạn.</em></h2>
+    <p style="margin-bottom: 28px; color: rgba(248,247,245,0.55);">Giá vẫn giữ nguyên 2.500.000đ. Hạn nhận: hết chủ nhật 13/09.</p>
     <div class="gift">
-      <span class="gift-flag">2 quà tặng · chỉ 6 người</span>
+      <span class="gift-flag">Hết chủ nhật 13/09</span>
       <span class="gift-n">Quà 01</span>
       <h3>Skill design, biến content của bạn <em>thành slide sẵn.</em></h3>
 
@@ -873,48 +930,26 @@
         <p>Để tới tháng 1, bạn bước vào 2027 với một cái kênh đã chạy rồi. Không phải với một dự định nữa.</p>
       </div>
 
-      <div class="gift-terms">
-        <div class="gift-terms-row">
-          <span class="gift-terms-key">Số người</span>
-          <span class="gift-terms-val hot">6 bạn duy nhất</span>
+      <div class="recap">
+        <div class="recap-box">
+          <span class="recap-ttl">Tuần này · 6 bạn đầu tiên</span>
+          <div class="recap-line"><span>Khoá No Crying IG: 3 module, 1 buổi zoom 1-1 tầm 2 tiếng</span><i>gói gốc</i></div>
+          <div class="recap-line"><span>Tài liệu doc, guideline bàn giao, storytelling support</span><i>gói gốc</i></div>
+          <div class="recap-line"><span>Quà 01: skill design, đưa content vào là ra slide sẵn</span><i>tặng</i></div>
+          <div class="recap-line"><span>Quà 02: 3 tháng mentor 1-1 tới hết tháng 12, thay cho 1 tháng</span><i>tặng</i></div>
+          <div class="recap-sum"><span>Bạn vẫn trả</span><b>2.500.000đ</b></div>
         </div>
-        <div class="gift-terms-row">
-          <span class="gift-terms-key">Hạn nhận</span>
-          <span class="gift-terms-val hot">Hết chủ nhật 13/09</span>
+
+        <div class="recap-box after">
+          <span class="recap-ttl">Sau 6 bạn này, sau chủ nhật 13/09</span>
+          <div class="recap-line"><span>Khoá No Crying IG, không kèm skill</span><i>2.500.000đ</i></div>
+          <div class="recap-line"><span>Khoá No Crying IG + skill design</span><i>3.500.000đ</i></div>
+          <div class="recap-sum"><span>Khoá gốc vẫn giữ giá. Chỉ có quà là hết.</span><b>3.500.000đ</b></div>
         </div>
-        <div class="gift-terms-row">
-          <span class="gift-terms-key">Sau đó</span>
-          <span class="gift-terms-val">Đi kèm khoá viral · 3.500.000đ</span>
-        </div>
-        <p class="gift-after">Con số 6 không phải để tạo áp lực. Mình kèm 1-1 suốt 3 tháng, và 6 người là hết sức mình rồi. Qua tuần này, ai muốn có skill vẫn được, nhưng nó sẽ đi kèm khoá viral của mình chứ không tặng riêng nữa. Bạn đăng ký sớm thì mình public thông tin trên story để mọi người dễ theo dõi.</p>
+
+        <p class="gift-after">Con số 6 không phải để tạo áp lực. Mình kèm 1-1 suốt 3 tháng, và 6 người là hết sức mình rồi. Qua chủ nhật 13/09, khoá vẫn giữ nguyên 2.500.000đ, nhưng ai muốn có thêm skill thì sẽ là 3.500.000đ, và phần 3 tháng mentor thì mình không mở nữa. Bạn đăng ký sớm thì mình public thông tin trên story để mọi người dễ theo dõi.</p>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- PRICING -->
-<div class="wrap">
-  <div class="section" style="padding-top: 0;">
-    <div class="divider center"></div>
-    <h2 style="text-align: center;">Chi phí.</h2>
-
-    <div class="price-box">
-      <span class="price-lbl">No Crying IG · Trọn gói</span>
-      <div class="price-num">2.500.000đ</div>
-      <p class="price-note">Một lần duy nhất</p>
-      <ul class="price-includes">
-        <li>3 module trong 1 buổi coaching 2 tiếng</li>
-        <li>1 tháng coaching và support 1-1 qua chat, voice</li>
-        <li>Checklist thực tế làm được liền sau buổi học</li>
-        <li>Demo và ví dụ thực tế</li>
-        <li>Guideline hướng dẫn, file tài liệu để nhân viên marketing bạn thuê có thể tự xử lý, mình sẽ cập nhật nếu có điều cần chỉnh sửa trong kênh</li>
-        <li>Storytelling support nếu brand có câu chuyện muốn khai thác, không thêm phí</li>
-        <li><strong>Tặng kèm skill design, đưa content vào là ra slide sẵn</strong></li>
-        <li><strong>Nâng 1 tháng support lên 3 tháng mentor 1-1, tới hết tháng 12</strong></li>
-      </ul>
-    </div>
-
-    <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);">2.5 triệu = chưa đầy 5 ngày bạn chạy ads 500k/ngày.<br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
   </div>
 </div>
 
