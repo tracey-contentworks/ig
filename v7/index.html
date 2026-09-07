@@ -348,6 +348,83 @@
     .hero { padding: 72px 0 56px; }
     .payment-info { padding: 20px; }
   }
+
+  /* GIFT / BONUS SKILL */
+  .gift {
+    border: 1px solid rgba(198, 230, 92, 0.28);
+    background: rgba(198, 230, 92, 0.045);
+    padding: 44px 38px;
+  }
+  .gift-flag {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--dark);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    margin-bottom: 22px;
+  }
+  .gift h3 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: clamp(26px, 3.4vw, 38px);
+    line-height: 1.18;
+    color: var(--light);
+    margin-bottom: 20px;
+  }
+  .gift h3 em { font-style: italic; color: var(--accent); }
+  .gift-quote {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(248, 247, 245, 0.9);
+    border-left: 2px solid var(--accent);
+    padding-left: 18px;
+    margin-bottom: 22px;
+  }
+  .proof-label {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin: 34px 0 14px; display: block;
+  }
+  .proof-main { background: rgba(0,0,0,0.35); border: 1px solid rgba(248,247,245,0.07); margin-bottom: 3px; }
+  .proof-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .proof-cell { background: rgba(0,0,0,0.35); border: 1px solid rgba(248,247,245,0.07); }
+  .proof-cell img, .proof-main img { width: 100%; height: auto; display: block; }
+  .proof-cap { padding: 12px 16px 16px; font-size: 12px; color: rgba(248,247,245,0.45); line-height: 1.55; }
+  .proof-cap b { color: var(--accent); font-weight: 600; }
+  .gift-who { list-style: none; margin: 14px 0 0; display: flex; flex-direction: column; gap: 11px; }
+  .gift-who li {
+    font-size: 15px; color: rgba(248,247,245,0.78);
+    padding-left: 20px; position: relative; line-height: 1.6;
+  }
+  .gift-who li::before { content: '->'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 3px; }
+  .gift-terms {
+    margin-top: 30px; padding-top: 26px;
+    border-top: 1px solid rgba(198, 230, 92, 0.22);
+  }
+  .gift-terms-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px; padding: 11px 0;
+    border-bottom: 1px solid rgba(248,247,245,0.06);
+  }
+  .gift-terms-row:last-of-type { border-bottom: none; }
+  .gift-terms-key { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(248,247,245,0.38); white-space: nowrap; }
+  .gift-terms-val { font-size: 16px; color: var(--light); font-weight: 600; text-align: right; }
+  .gift-terms-val.hot { color: var(--accent); }
+  .gift-after {
+    margin-top: 20px; font-size: 14px; line-height: 1.75;
+    color: rgba(248,247,245,0.55);
+  }
+  @media (max-width: 600px) {
+    .gift { padding: 30px 22px; }
+    .gift-quote { font-size: 17px; padding-left: 14px; }
+    .proof-pair { grid-template-columns: 1fr; }
+    .gift-terms-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .gift-terms-val { text-align: left; }
+  }
 </style>
 </head>
 <body>
@@ -580,11 +657,70 @@
   </div>
 </div>
 
+<!-- GIFT / BONUS SKILL -->
+<div class="wrap">
+  <div class="section" style="padding-top: 0;">
+    <div class="divider"></div>
+    <div class="gift">
+      <span class="gift-flag">Quà tặng · chỉ 6 người</span>
+      <h3>Skill viết content viral <em>và ra slide sẵn</em> cho bạn.</h3>
+
+      <p class="gift-quote">Mình biết cách viral. Mình chỉ lười ngồi làm slide.</p>
+
+      <p>Đó là câu mình tự nói với bản thân suốt một thời gian dài. Biết phải đăng gì, biết bài nào sẽ chạy, nhưng cứ mở app thiết kế lên là đuối. Nên mình làm ra một skill để không phải ngồi thiết kế nữa.</p>
+      <p>Skill này vừa ra content viral, vừa ra slide sẵn luôn. Bạn chỉ cần tải hình về rồi đăng.</p>
+
+      <span class="proof-label">Kết quả trong đúng 1 tuần, mình không đụng vào một thiết kế nào</span>
+
+      <div class="proof-main">
+        <img src="proof-views.jpg" alt="1.733.892 view trong 7 ngày">
+        <p class="proof-cap"><b>1.733.892 view</b> trong 7 ngày (30/08 tới 05/09). 84,3% tới từ người chưa follow.</p>
+      </div>
+      <div class="proof-pair">
+        <div class="proof-cell">
+          <img src="proof-followers-before.jpg" alt="16.299 followers">
+          <p class="proof-cap">Trước đó: <b>16.299</b> followers, đang đi ngang.</p>
+        </div>
+        <div class="proof-cell">
+          <img src="proof-followers-after.jpg" alt="17.337 followers">
+          <p class="proof-cap">Sau 1 tuần: <b>17.337</b> followers. Hơn 1.000 người mới.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 26px;">Biết cách viral thì đã dễ rồi. Giờ tới khâu làm ra thành phẩm để đăng, nó còn dễ hơn nữa.</p>
+
+      <span class="proof-label">Mình muốn tặng cho ai</span>
+      <ul class="gift-who">
+        <li>Bạn làm kênh faceless, không thích lộ mặt.</li>
+        <li>Bạn chưa xây kênh bao giờ, không biết bắt đầu từ đâu.</li>
+        <li>Bạn muốn ứng dụng AI thật sự vào việc làm content, không phải nghe nói suông.</li>
+      </ul>
+      <p style="margin-top: 18px;">Mình đóng gói sẵn skill này. Bạn tải về là làm được liền.</p>
+
+      <div class="gift-terms">
+        <div class="gift-terms-row">
+          <span class="gift-terms-key">Số người</span>
+          <span class="gift-terms-val hot">6 bạn duy nhất</span>
+        </div>
+        <div class="gift-terms-row">
+          <span class="gift-terms-key">Hạn nhận</span>
+          <span class="gift-terms-val hot">Hết chủ nhật 13/09</span>
+        </div>
+        <div class="gift-terms-row">
+          <span class="gift-terms-key">Sau đó</span>
+          <span class="gift-terms-val">Đi kèm khoá viral · 3.500.000đ</span>
+        </div>
+        <p class="gift-after">Mình biết skill này sẽ làm sự cạnh tranh tăng lên, nên mình chỉ để cho 6 bạn trong tuần này. Qua tuần, ai muốn có skill vẫn được, nhưng nó sẽ đi kèm khoá viral của mình chứ không tặng riêng nữa. Bạn đăng ký sớm thì mình public thông tin trên story để mọi người dễ theo dõi.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- PRICING -->
 <div class="wrap">
   <div class="section" style="padding-top: 0;">
     <div class="divider center"></div>
-    <h2 style="text-align: center;">Đầu tư.</h2>
+    <h2 style="text-align: center;">Chi phí.</h2>
 
     <div class="price-box">
       <span class="price-lbl">No Crying IG · Trọn gói</span>
@@ -597,6 +733,7 @@
         <li>Demo và ví dụ thực tế</li>
         <li>Guideline hướng dẫn, file tài liệu để nhân viên marketing bạn thuê có thể tự xử lý, mình sẽ cập nhật nếu có điều cần chỉnh sửa trong kênh</li>
         <li>Storytelling support nếu brand có câu chuyện muốn khai thác, không thêm phí</li>
+        <li><strong>Tặng kèm skill làm content viral và ra slide sẵn, chỉ cho 6 bạn đăng ký trong tuần này</strong></li>
       </ul>
     </div>
 
