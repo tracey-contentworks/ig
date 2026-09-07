@@ -494,6 +494,47 @@
     .qz li::before { font-size: 21px; min-width: 28px; }
     .qz-q { font-size: 16px; }
   }
+
+  /* PAIN GROUPS + CORE DEFINITION */
+  .pain-group {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+    display: block; margin: 34px 0 14px;
+  }
+  .pain-group:first-of-type { margin-top: 18px; }
+  .core {
+    margin-top: 46px;
+    border: 1px solid rgba(198,230,92,0.25);
+    background: rgba(198,230,92,0.045);
+    padding: 36px 32px;
+  }
+  .core h3 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400; font-size: clamp(24px, 3.2vw, 34px);
+    line-height: 1.2; color: var(--light); margin-bottom: 18px;
+  }
+  .core h3 em { font-style: italic; color: var(--accent); }
+  .core-two { list-style: none; counter-reset: c; margin: 24px 0 0; display: flex; flex-direction: column; gap: 16px; }
+  .core-two li {
+    counter-increment: c; display: flex; gap: 16px; align-items: flex-start;
+  }
+  .core-two li::before {
+    content: counter(c);
+    font-family: 'DM Serif Display', serif; font-size: 24px;
+    color: var(--accent); line-height: 1.1; flex-shrink: 0; min-width: 24px;
+  }
+  .core-two b { display: block; color: var(--light); font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+  .core-two span { font-size: 14px; color: rgba(248,247,245,0.6); line-height: 1.65; }
+  .core-stop {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 22px; color: var(--accent);
+    margin: 26px 0 0;
+  }
+  .core-turn {
+    margin-top: 28px; padding-top: 24px;
+    border-top: 1px solid rgba(198,230,92,0.22);
+  }
+  @media (max-width: 600px) { .core { padding: 26px 20px; } }
 </style>
 </head>
 <body>
@@ -509,9 +550,9 @@
     <span class="label">@tracey.contentworks · No Crying IG · coaching 1-1</span>
     <h1>1 triệu người lạ<br>biết đến bạn.<br><em>Không ads.</em></h1>
     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px;">
-      <span style="padding: 7px 18px; border: 1px solid rgba(198,230,92,0.4); font-size: 13px; color: rgba(248,247,245,0.85);">Brand bán hàng</span>
-      <span style="padding: 7px 18px; border: 1px solid rgba(198,230,92,0.4); font-size: 13px; color: rgba(248,247,245,0.85);">Thương hiệu cá nhân</span>
       <span style="padding: 7px 18px; border: 1px solid rgba(198,230,92,0.4); font-size: 13px; color: rgba(248,247,245,0.85);">KOC / KOL</span>
+      <span style="padding: 7px 18px; border: 1px solid rgba(198,230,92,0.4); font-size: 13px; color: rgba(248,247,245,0.85);">Thương hiệu cá nhân</span>
+      <span style="padding: 7px 18px; border: 1px solid rgba(198,230,92,0.4); font-size: 13px; color: rgba(248,247,245,0.85);">Brand bán hàng</span>
     </div>
     <p class="sub">Muốn kênh tự kéo người lạ liên tục, không cần đốt tiền ads, không cần lo thuật toán, không cần biết mình phải làm gì tiếp theo.</p>
   </div>
@@ -522,16 +563,55 @@
   <div class="section">
     <div class="divider"></div>
     <h2>Bạn đang ở đây không?</h2>
+
+    <span class="pain-group">Nếu bạn làm KOC / KOL</span>
+    <ul class="pain-list">
+      <li>Bạn muốn nhận booking, muốn brand chủ động tìm tới mình. Nhưng nhìn vào kênh, chưa có gì để người ta tin.</li>
+      <li>Bạn biết mình có gu, có góc nhìn, có thứ để nói. Ngoài tệp cũ ra thì không ai biết bạn là ai.</li>
+      <li>Kênh lên được 2.000, rồi 5.000, 6.000 follow là đứng luôn. Bạn vẫn làm đều, nhưng nó chỉ nhích từng chút một và bạn không biết bước tiếp theo là gì.</li>
+    </ul>
+
+    <span class="pain-group">Nếu bạn làm thương hiệu cá nhân, bán khoá học</span>
+    <ul class="pain-list">
+      <li>Cố gắng lắm bạn mới đăng hình ảnh cá nhân của mình lên, để nói chuyện, để có tiếng nói trên Instagram về đúng cái chủ đề bạn rành.</li>
+      <li>Bạn làm đều đặn, ngồi đợi một bài nào đó nổ. Nó không nổ.</li>
+      <li>Mỗi lần chuẩn bị content là mất rất nhiều thời gian, trong khi bạn còn cả đống việc khác. Bạn biết kiểu này mình theo không kịp.</li>
+      <li>Bạn đã xem qua vài khoá khác. Chỗ này một giá, chỗ kia một giá. Bạn không biết nên học từ đâu, và học như thế nào.</li>
+    </ul>
+
+    <span class="pain-group">Nếu bạn có shop, có brand bán hàng</span>
     <ul class="pain-list">
       <li>Đã có shop. Đã chạy ads. Vẫn ngồi chờ tin nhắn khách mà không thấy.</li>
       <li>500k/ngày đổ vào ads, lúc đầu có đơn, sau thì tiền vẫn trừ mà đơn không thấy đâu.</li>
-      <li>Thuê người làm marketing, đăng đủ số lượng theo kế hoạch, nhưng tỷ lệ tiếp cận không tăng. Không có người lạ mới nào biết đến brand.</li>
-      <li>Làm hình đẹp, content cẩn thận, chỉnh chu feed nhưng mở insights ra, reach vẫn chỉ quanh quẩn trong tệp cũ.</li>
-      <li>Nhìn brand khác viral, tự hỏi họ bỏ ra cái gì mà mình không bỏ được.</li>
-      <li>Là thương hiệu cá nhân hay KOC/KOL, bạn biết mình có chuyên môn, có góc nhìn, nhưng không ai biết đến bạn ngoài tệp cũ.</li>
-      <li>Muốn xây kênh nghiêm túc, muốn được brand tìm đến, muốn kênh đủ mạnh để tạo ra cơ hội, nhưng không biết phải làm gì để thoát khỏi ngưỡng đang kẹt.</li>
-      <li>Kênh đang ổn nhưng bạn biết nó vẫn chưa đến nơi mình muốn. Và bạn không biết bước tiếp theo là gì.</li>
+      <li>Thuê người làm marketing, đăng đủ số lượng theo kế hoạch, nhưng không có người lạ mới nào biết đến brand.</li>
+      <li>Làm hình đẹp, content chỉn chu, mở insights ra thì reach vẫn quanh quẩn trong tệp cũ.</li>
     </ul>
+
+    <div class="core">
+      <h3>Thứ bạn cần lúc này <em>đơn giản hơn vậy nhiều.</em></h3>
+      <p>Bạn cần một cái kênh có view, và có followers. Đủ hai thứ đó mới gọi là build kênh.</p>
+      <p>Và build kênh cũng chỉ cần đúng hai dấu hiệu:</p>
+      <ul class="core-two">
+        <li>
+          <div>
+            <b>Kênh có dấu hiệu đi lên</b>
+            <span>Bạn nhận được tương tác của người lạ. Nhiều người mới biết tới kênh của bạn.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>Kênh ra chuyển đổi</b>
+            <span>Bạn có một tệp followers của riêng mình, không phải người quen, không phải tệp cũ.</span>
+          </div>
+        </li>
+      </ul>
+      <p class="core-stop">Chấm hết.</p>
+
+      <div class="core-turn">
+        <p>Nhưng những bên khác đang nói quá nhiều về chuyên môn mà không vào việc. Quá nhiều thứ phải nắm, mà không thứ nào giúp bạn ra kết quả liền.</p>
+        <p>Bạn đang kẹt nên bạn đi tìm cách. Rồi bạn còn kẹt hơn, vì bạn vừa bước vào một mê cung khác. Mê cung đó được thiết kế để tối ưu lợi nhuận cho họ, không phải cho bạn.</p>
+      </div>
+    </div>
   </div>
 </div>
 
