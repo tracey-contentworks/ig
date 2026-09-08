@@ -512,6 +512,43 @@
     .latest { padding: 26px 20px; }
     .shot-pair { grid-template-columns: 1fr; }
   }
+  /* CONVERSION BAND */
+  .conv {
+    margin-top: 22px;
+    border: 1px solid rgba(198,230,92,0.4);
+    background: rgba(198,230,92,0.09);
+    padding: 26px 24px;
+  }
+  .conv-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 20px; flex-wrap: wrap; text-align: center;
+  }
+  .conv-side { flex: 1; min-width: 130px; }
+  .conv-n {
+    font-family: 'DM Serif Display', serif; line-height: 1;
+    font-size: clamp(26px, 4.4vw, 40px); color: var(--light);
+  }
+  .conv-side.out .conv-n { color: var(--accent); }
+  .conv-k {
+    display: block; margin-top: 7px; font-size: 11px;
+    letter-spacing: 0.13em; text-transform: uppercase;
+    color: rgba(248,247,245,0.4);
+  }
+  .conv-arrow {
+    font-family: 'DM Serif Display', serif; font-size: 30px;
+    color: var(--accent); opacity: 0.6; flex-shrink: 0;
+  }
+  .conv-say {
+    margin: 20px 0 0; padding-top: 18px;
+    border-top: 1px solid rgba(198,230,92,0.25);
+    font-size: 15px; line-height: 1.75; color: rgba(248,247,245,0.8);
+  }
+  .conv-say strong { color: var(--accent); }
+  @media (max-width: 600px) {
+    .conv { padding: 22px 18px; }
+    .conv-arrow { transform: rotate(90deg); font-size: 24px; }
+    .conv-row { gap: 12px; }
+  }
 </style>
 </head>
 <body>
@@ -700,13 +737,28 @@
         </div>
         <div class="shot">
           <img src="proof-followers-after.jpg" alt="17.337 followers">
-          <p class="shot-cap">Sau 1 tuần: <b>17.337</b> followers. Hơn <b>1.000</b> người mới.</p>
+          <p class="shot-cap">Sau 1 tuần: <b>17.337</b> followers. Đúng <b>1.038</b> người mới trong 7 ngày.</p>
         </div>
       </div>
 
+      <div class="conv">
+        <div class="conv-row">
+          <div class="conv-side">
+            <div class="conv-n">1.733.892</div>
+            <span class="conv-k">view trong 7 ngày</span>
+          </div>
+          <div class="conv-arrow">-&gt;</div>
+          <div class="conv-side out">
+            <div class="conv-n">+1.038</div>
+            <span class="conv-k">followers trong 7 ngày</span>
+          </div>
+        </div>
+        <p class="conv-say">View nhiều mà không ai ở lại thì chỉ là người đi ngang, xem xong rồi thôi. Ở đây 1,7 triệu view đẩy về <strong>hơn 1.000 người mới bấm follow</strong> trong đúng 1 tuần. Đó mới là thứ đáng gọi là chuyển đổi.</p>
+      </div>
+
       <div class="latest-note">
-        <p>Thứ mình muốn bạn để ý không phải con số. Là trong cả tuần đó mình không đụng vào một thiết kế nào.</p>
-        <p>Nguyên lý vẫn y như cũ. Nhưng khi có AI lo phần slide, tốc độ ra bài nhanh hơn hẳn, và nhàn hơn trước rất nhiều.</p>
+        <p>Và thứ mình muốn bạn để ý không phải con số view. Là trong cả tuần đó mình không đụng vào một thiết kế nào.</p>
+        <p>Nguyên lý vẫn y như cũ. Nhưng khi có AI lo phần slide, tốc độ ra bài nhanh hơn hẳn, nhàn hơn trước rất nhiều, mà chuyển đổi vẫn về đều.</p>
       </div>
     </div>
   </div>
