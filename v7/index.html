@@ -485,6 +485,33 @@
   
   
   
+  /* LATEST RUN */
+  .latest {
+    margin-top: 44px;
+    border: 1px solid rgba(198,230,92,0.28);
+    background: rgba(198,230,92,0.045);
+    padding: 34px 30px;
+    text-align: left;
+  }
+  .latest h3 {
+    font-family: 'DM Serif Display', serif; font-weight: 400;
+    font-size: clamp(23px, 3vw, 32px); line-height: 1.2;
+    color: var(--light); margin-bottom: 16px;
+  }
+  .latest h3 em { font-style: italic; color: var(--accent); }
+  .shot { background: rgba(0,0,0,0.35); border: 1px solid rgba(248,247,245,0.07); margin-bottom: 3px; }
+  .shot-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .shot img { width: 100%; height: auto; display: block; }
+  .shot-cap { padding: 12px 16px 16px; font-size: 12px; color: rgba(248,247,245,0.45); line-height: 1.55; margin: 0; }
+  .shot-cap b { color: var(--accent); font-weight: 600; }
+  .latest-note {
+    margin-top: 26px; padding-top: 22px;
+    border-top: 1px solid rgba(198,230,92,0.22);
+  }
+  @media (max-width: 600px) {
+    .latest { padding: 26px 20px; }
+    .shot-pair { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -657,6 +684,31 @@
     </div>
     <p style="text-align: center; font-size: 13px; color: rgba(248,247,245,0.35); margin-top: 14px;">Bỏ acc 2 tháng, ngày đăng trở lại: 3 bài đều viral. Bèo nhất 42k, cao nhất gần 450k views.</p>
     <img src="../tracey viral/9AC15D18-296E-4793-B8BC-40F0E3B6E6FB.jpg" alt="Bằng chứng viral" style="width: 100%; max-width: 480px; height: auto; display: block; margin: 20px auto 0;">
+
+    <div class="latest">
+      <h3>Và đây là <em>lần gần nhất.</em></h3>
+      <p>Ngày mình quay lại build kênh, mình vẫn làm đúng nguyên lý cũ. Khác một chỗ: lần này mình để AI lo hết khâu làm slide.</p>
+
+      <div class="shot">
+        <img src="proof-views.jpg" alt="1.733.892 view trong 7 ngày">
+        <p class="shot-cap"><b>1.733.892 view</b> trong 7 ngày (30/08 tới 05/09). 84,3% tới từ người chưa follow.</p>
+      </div>
+      <div class="shot-pair">
+        <div class="shot">
+          <img src="proof-followers-before.jpg" alt="16.299 followers">
+          <p class="shot-cap">Trước đó: <b>16.299</b> followers, đang đi ngang.</p>
+        </div>
+        <div class="shot">
+          <img src="proof-followers-after.jpg" alt="17.337 followers">
+          <p class="shot-cap">Sau 1 tuần: <b>17.337</b> followers. Hơn <b>1.000</b> người mới.</p>
+        </div>
+      </div>
+
+      <div class="latest-note">
+        <p>Thứ mình muốn bạn để ý không phải con số. Là trong cả tuần đó mình không đụng vào một thiết kế nào.</p>
+        <p>Nguyên lý vẫn y như cũ. Nhưng khi có AI lo phần slide, tốc độ ra bài nhanh hơn hẳn, và nhàn hơn trước rất nhiều.</p>
+      </div>
+    </div>
   </div>
 </div>
 
