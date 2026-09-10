@@ -569,14 +569,33 @@
   .vs-col.win .vs-n { color: var(--accent); }
   .vs-k { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,247,245,0.38); margin-top: 7px; display: block; }
 
-  .math { margin-top: 3px; border: 1px solid rgba(198,230,92,0.4); background: rgba(198,230,92,0.09); padding: 28px 26px; }
-  .math-row { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(248,247,245,0.08); font-size: 15px; color: rgba(248,247,245,0.75); line-height: 1.5; }
-  .math-row:last-of-type { border-bottom: none; }
-  .math-row b { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 22px; color: var(--light); white-space: nowrap; flex-shrink: 0; }
-  .math-row.big b { font-size: 30px; color: var(--accent); }
-  .math-row.zero b { font-size: 30px; color: var(--accent); }
-  .math-say { margin: 20px 0 0; padding-top: 18px; border-top: 1px solid rgba(198,230,92,0.28); font-size: 15px; line-height: 1.8; color: rgba(248,247,245,0.8); }
-  .math-say strong { color: var(--accent); }
+  .math { margin-top: 3px; border: 1px solid rgba(198,230,92,0.4); background: rgba(198,230,92,0.09); padding: 34px 26px 28px; }
+  .punch { text-align: center; margin-bottom: 30px; }
+  .punch-n {
+    font-family: 'DM Serif Display', serif; line-height: 0.95;
+    font-size: clamp(52px, 12vw, 96px); color: var(--accent);
+  }
+  .punch-t {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: clamp(20px, 3.4vw, 28px); color: var(--light);
+    margin-top: 10px; line-height: 1.3;
+  }
+  .tbl { border-top: 1px solid rgba(198,230,92,0.28); }
+  .tbl-row {
+    display: grid; grid-template-columns: 1fr auto auto; gap: 12px;
+    align-items: baseline; padding: 14px 0;
+    border-bottom: 1px solid rgba(248,247,245,0.08);
+  }
+  .tbl-row:last-child { border-bottom: none; }
+  .tbl-who { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,247,245,0.4); }
+  .tbl-row.win .tbl-who { color: var(--accent); }
+  .tbl-v { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--light); text-align: right; white-space: nowrap; }
+  .tbl-row.win .tbl-v { color: var(--accent); }
+  .tbl-c { font-size: 14px; color: rgba(248,247,245,0.5); text-align: right; white-space: nowrap; min-width: 128px; }
+  .tbl-row.win .tbl-c { color: var(--accent); font-weight: 600; }
+  .math-say { margin: 26px 0 0; padding-top: 22px; border-top: 1px solid rgba(198,230,92,0.28); }
+  .math-say p { font-size: 16px; line-height: 1.6; color: rgba(248,247,245,0.8); margin-bottom: 12px; }
+  .math-say p:last-child { margin-bottom: 0; color: var(--accent); font-weight: 500; }
 
   /* PRICE LADDER */
   .ladder { max-width: 460px; margin: 22px auto 0; }
@@ -964,10 +983,40 @@
     </div>
 
     <div class="math">
-      <div class="math-row"><span>Ads: 128.376.437đ chia cho 1.061 lượt, ra giá mỗi lượt</span><b>121.000đ</b></div>
-      <div class="math-row big"><span>Vậy 7.011 lượt của mình, nếu mua bằng ads, sẽ tốn</span><b>848 triệu</b></div>
-      <div class="math-row zero"><span>Số tiền mình thật sự bỏ ra</span><b>0đ</b></div>
-      <p class="math-say">Lượt ghé trang không phải con số cho vui. Đó là người lạ vừa xem bài của bạn, thấy đủ tò mò để bấm vào xem bạn là ai, bạn làm gì, bạn bán gì. <strong>Nó là bước ngay trước khi người ta bấm follow hoặc nhắn tin cho bạn.</strong></p>
+      <div class="punch">
+        <div class="punch-n">Gấp 6,6 lần</div>
+        <div class="punch-t">với 0 đồng.</div>
+      </div>
+
+      <div class="tbl">
+        <div class="tbl-row">
+          <span class="tbl-who">Mua bằng ads</span>
+          <span class="tbl-v">1.061 lượt</span>
+          <span class="tbl-c">128.376.437đ</span>
+        </div>
+        <div class="tbl-row win">
+          <span class="tbl-who">Content viral</span>
+          <span class="tbl-v">7.011 lượt</span>
+          <span class="tbl-c">0đ</span>
+        </div>
+        <div class="tbl-row">
+          <span class="tbl-who">Giá 1 lượt nếu mua</span>
+          <span class="tbl-v">121.000đ</span>
+          <span class="tbl-c">theo giá IG</span>
+        </div>
+        <div class="tbl-row">
+          <span class="tbl-who">7.011 lượt nếu mua</span>
+          <span class="tbl-v">848 triệu</span>
+          <span class="tbl-c">mình trả 0đ</span>
+        </div>
+      </div>
+
+      <div class="math-say">
+        <p>Lượt ghé trang không phải con số cho vui.</p>
+        <p>Là người lạ vừa xem bài của bạn.</p>
+        <p>Thấy đủ tò mò để bấm vào xem bạn là ai, bạn làm gì, bạn bán gì.</p>
+        <p>Là bước ngay trước khi người ta bấm follow hoặc nhắn tin cho bạn.</p>
+      </div>
     </div>
 
     <p style="margin-top: 26px;">Và giá ads thì chỉ có tăng. Mỗi năm mỗi mắc, vì càng ngày càng đông người tranh nhau cùng một tệp người xem.</p>
@@ -981,11 +1030,21 @@
     <div class="divider center"></div>
     <h2 style="text-align: center;">Chi phí.</h2>
 
-    <div class="price-box">
+    <div class="ladder">
+      <div class="ladder-row now">
+        <span class="ladder-when"><span class="ladder-now-tag">bây giờ</span>Tới hết chủ nhật 13/09</span>
+        <span class="ladder-price">2.500.000đ</span>
+      </div>
+      <div class="ladder-row">
+        <span class="ladder-when">Từ 14/09 trở đi</span>
+        <span class="ladder-price">3.400.000đ</span>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 18px; font-size: 14px; color: rgba(248,247,245,0.45);">Cùng một buổi coaching, cùng một nội dung.<br>Chỉ khác ngày bạn quyết định.</p>
+
+    <div class="price-box" style="margin-top: 40px;">
       <span class="price-lbl">No Crying IG · Trọn gói</span>
-      <div class="price-num">2.500.000đ</div>
-      <p class="price-note">Một lần duy nhất · giá tới hết chủ nhật 13/09</p>
-      <ul class="price-includes">
+      <ul class="price-includes" style="margin-bottom: 0; margin-top: 20px;">
         <li>3 module trong 1 buổi coaching 2 tiếng</li>
         <li>1 tháng coaching và support 1-1 qua chat, voice</li>
         <li>Checklist thực tế làm được liền sau buổi học</li>
@@ -996,27 +1055,6 @@
     </div>
 
     <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);">2.5 triệu = chưa tới 8 tiếng chạy cái ads ở trên.<br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
-
-    <p style="text-align: center; margin-top: 40px; font-size: 15px; color: rgba(248,247,245,0.72);"><strong>Học phí tăng theo mốc. Không có giá nào quay lại.</strong></p>
-    <div class="ladder">
-      <div class="ladder-row now">
-        <span class="ladder-when"><span class="ladder-now-tag">bây giờ</span>Tới hết 13/09</span>
-        <span class="ladder-price">2.500.000đ</span>
-      </div>
-      <div class="ladder-row">
-        <span class="ladder-when">14/09 tới 30/09</span>
-        <span class="ladder-price">2.800.000đ</span>
-      </div>
-      <div class="ladder-row">
-        <span class="ladder-when">01/10 tới 15/10</span>
-        <span class="ladder-price">3.100.000đ</span>
-      </div>
-      <div class="ladder-row">
-        <span class="ladder-when">16/10 tới 31/10</span>
-        <span class="ladder-price">3.400.000đ</span>
-      </div>
-    </div>
-    <p style="text-align: center; margin-top: 20px; font-size: 14px; color: rgba(248,247,245,0.45);">Cùng một buổi coaching, cùng một nội dung. Chỉ khác ngày bạn quyết định.</p>
   </div>
 </div>
 
@@ -1025,7 +1063,7 @@
   <div class="section" style="padding-top: 0;">
     <div class="divider"></div>
     <h2>Trước khi bạn quyết định học.</h2>
-    <p>Cái mình dạy không phải tips. Mình mất gần một năm để hiểu ra nó, và nói thật, không phải ai cũng làm được. Có tiền không có nghĩa là học được.</p>
+    <p>Cái mình dạy không phải tips. Mình mất gần một năm để hiểu ra nó.</p>
     <p>Mình muốn chọn người thật sự muốn làm. Nên trước khi nhắn cho mình, bạn ngồi xuống và tự trả lời mấy câu dưới đây. Bạn không cần gửi câu trả lời cho mình. Bạn chỉ cần trả lời thật với chính bạn.</p>
 
     <ul class="qz">
@@ -1098,7 +1136,7 @@
       <div class="payment-info">
         <div class="payment-row">
           <span class="payment-key">Số tiền</span>
-          <span class="payment-val" style="color: var(--accent);">2.500.000đ</span>
+          <span class="payment-val" style="color: var(--accent);">theo mốc ở phần Chi phí</span>
         </div>
         <div class="payment-row">
           <span class="payment-key">Nội dung CK</span>
