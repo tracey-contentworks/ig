@@ -610,6 +610,13 @@
   .ladder-price { font-family: 'DM Serif Display', serif; font-size: 21px; color: rgba(248,247,245,0.55); white-space: nowrap; }
   .ladder-row.now .ladder-price { color: var(--accent); font-size: 26px; }
   .ladder-now-tag { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark); background: var(--accent); padding: 4px 9px; font-weight: 600; margin-right: 10px; }
+  .ladder-right { display: flex; align-items: baseline; gap: 12px; flex-shrink: 0; }
+  .ladder-step {
+    font-size: 11px; letter-spacing: 0.08em; font-weight: 600;
+    color: rgba(248,247,245,0.35);
+    border: 1px solid rgba(248,247,245,0.12);
+    padding: 3px 8px; white-space: nowrap;
+  }
   @media (max-width: 600px) {
     .vs { grid-template-columns: 1fr; }
     .math { padding: 22px 18px; }
@@ -1033,14 +1040,19 @@
     <div class="ladder">
       <div class="ladder-row now">
         <span class="ladder-when"><span class="ladder-now-tag">bây giờ</span>Tới hết chủ nhật 13/09</span>
-        <span class="ladder-price">2.500.000đ</span>
+        <span class="ladder-right"><span class="ladder-price">2.500.000đ</span></span>
       </div>
       <div class="ladder-row">
-        <span class="ladder-when">Từ 14/09 trở đi</span>
-        <span class="ladder-price">3.400.000đ</span>
+        <span class="ladder-when">14/09 tới 20/09</span>
+        <span class="ladder-right"><span class="ladder-step">+300k</span><span class="ladder-price">2.800.000đ</span></span>
+      </div>
+      <div class="ladder-row">
+        <span class="ladder-when">21/09 tới 27/09</span>
+        <span class="ladder-right"><span class="ladder-step">+400k</span><span class="ladder-price">3.200.000đ</span></span>
       </div>
     </div>
-    <p style="text-align: center; margin-top: 18px; font-size: 14px; color: rgba(248,247,245,0.45);">Cùng một buổi coaching, cùng một nội dung.<br>Chỉ khác ngày bạn quyết định.</p>
+    <p style="text-align: center; margin-top: 18px; font-size: 14px; color: rgba(248,247,245,0.55);">Sau 27/09, mỗi mốc tiếp theo tăng thêm 500.000đ.</p>
+    <p style="text-align: center; margin-top: 10px; font-size: 14px; color: rgba(248,247,245,0.45);">Cùng một buổi coaching, cùng một nội dung.<br>Chỉ khác ngày bạn quyết định.</p>
 
     <div class="price-box" style="margin-top: 40px;">
       <span class="price-lbl">No Crying IG · Trọn gói</span>
