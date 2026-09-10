@@ -549,6 +549,55 @@
     .conv-arrow { transform: rotate(90deg); font-size: 24px; }
     .conv-row { gap: 12px; }
   }
+  /* AD COST COMPARISON */
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 34px; }
+  .vs-col { border: 1px solid rgba(248,247,245,0.08); background: rgba(248,247,245,0.03); display: flex; flex-direction: column; }
+  .vs-col.win { border-color: rgba(198,230,92,0.35); background: rgba(198,230,92,0.06); }
+  .vs-head { padding: 20px 20px 16px; }
+  .vs-tag {
+    font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 600; display: block; margin-bottom: 10px;
+    color: rgba(248,247,245,0.35);
+  }
+  .vs-col.win .vs-tag { color: var(--accent); }
+  .vs-cost { font-family: 'DM Serif Display', serif; font-size: clamp(22px, 3.2vw, 30px); line-height: 1.1; color: rgba(248,247,245,0.85); }
+  .vs-col.win .vs-cost { color: var(--accent); }
+  .vs-costsub { font-size: 12px; color: rgba(248,247,245,0.38); margin-top: 6px; line-height: 1.5; }
+  .vs-col img { width: 100%; height: auto; display: block; background: #fff; }
+  .vs-foot { padding: 18px 20px 22px; margin-top: auto; border-top: 1px solid rgba(248,247,245,0.07); }
+  .vs-n { font-family: 'DM Serif Display', serif; font-size: 32px; line-height: 1; color: rgba(248,247,245,0.9); }
+  .vs-col.win .vs-n { color: var(--accent); }
+  .vs-k { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,247,245,0.38); margin-top: 7px; display: block; }
+
+  .math { margin-top: 3px; border: 1px solid rgba(198,230,92,0.4); background: rgba(198,230,92,0.09); padding: 28px 26px; }
+  .math-row { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(248,247,245,0.08); font-size: 15px; color: rgba(248,247,245,0.75); line-height: 1.5; }
+  .math-row:last-of-type { border-bottom: none; }
+  .math-row b { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 22px; color: var(--light); white-space: nowrap; flex-shrink: 0; }
+  .math-row.big b { font-size: 30px; color: var(--accent); }
+  .math-row.zero b { font-size: 30px; color: var(--accent); }
+  .math-say { margin: 20px 0 0; padding-top: 18px; border-top: 1px solid rgba(198,230,92,0.28); font-size: 15px; line-height: 1.8; color: rgba(248,247,245,0.8); }
+  .math-say strong { color: var(--accent); }
+
+  /* PRICE LADDER */
+  .ladder { max-width: 460px; margin: 22px auto 0; }
+  .ladder-row {
+    display: flex; justify-content: space-between; align-items: center; gap: 14px;
+    padding: 15px 18px; border: 1px solid rgba(248,247,245,0.08);
+    margin-bottom: 3px; background: rgba(248,247,245,0.02);
+  }
+  .ladder-row.now { border-color: rgba(198,230,92,0.45); background: rgba(198,230,92,0.08); }
+  .ladder-when { font-size: 14px; color: rgba(248,247,245,0.5); }
+  .ladder-row.now .ladder-when { color: var(--light); font-weight: 600; }
+  .ladder-price { font-family: 'DM Serif Display', serif; font-size: 21px; color: rgba(248,247,245,0.55); white-space: nowrap; }
+  .ladder-row.now .ladder-price { color: var(--accent); font-size: 26px; }
+  .ladder-now-tag { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark); background: var(--accent); padding: 4px 9px; font-weight: 600; margin-right: 10px; }
+  @media (max-width: 600px) {
+    .vs { grid-template-columns: 1fr; }
+    .math { padding: 22px 18px; }
+    .math-row { flex-direction: column; gap: 4px; }
+    .ladder-row { padding: 13px 14px; }
+    .ladder-when { font-size: 13px; }
+  }
 </style>
 </head>
 <body>
@@ -879,6 +928,53 @@
   </div>
 </div>
 
+<!-- AD COST -->
+<div class="wrap">
+  <div class="section" style="padding-top: 0;">
+    <div class="divider"></div>
+    <h2>Một lượt người lạ ghé trang bạn <em>giá bao nhiêu?</em></h2>
+    <p>Không phải mình đoán. Instagram tự báo giá. Đây là ảnh chụp màn hình lúc mình thử set ads cho đúng một mục tiêu: kéo người lạ bấm vào xem trang cá nhân.</p>
+
+    <div class="vs">
+      <div class="vs-col">
+        <div class="vs-head">
+          <span class="vs-tag">Mua bằng ads</span>
+          <div class="vs-cost">128.376.437đ</div>
+          <p class="vs-costsub">18.339.491đ mỗi ngày, chạy 7 ngày. Giá Instagram tự đưa ra.</p>
+        </div>
+        <img src="ads-budget.png" alt="Instagram báo giá ads 128.376.437đ cho 7 ngày">
+        <div class="vs-foot">
+          <div class="vs-n">1.061</div>
+          <span class="vs-k">lượt ghé trang, ước tính</span>
+        </div>
+      </div>
+
+      <div class="vs-col win">
+        <div class="vs-head">
+          <span class="vs-tag">Content viral, 0đ ads</span>
+          <div class="vs-cost">0đ</div>
+          <p class="vs-costsub">Cùng 7 ngày (01/09 tới 07/09). Không chạy một đồng quảng cáo nào.</p>
+        </div>
+        <img src="organic-profile-visits.png" alt="7.011 lượt ghé trang trong 7 ngày, không chạy ads">
+        <div class="vs-foot">
+          <div class="vs-n">7.011</div>
+          <span class="vs-k">lượt ghé trang, số thật</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="math">
+      <div class="math-row"><span>Ads: 128.376.437đ chia cho 1.061 lượt, ra giá mỗi lượt</span><b>121.000đ</b></div>
+      <div class="math-row big"><span>Vậy 7.011 lượt của mình, nếu mua bằng ads, sẽ tốn</span><b>848 triệu</b></div>
+      <div class="math-row zero"><span>Số tiền mình thật sự bỏ ra</span><b>0đ</b></div>
+      <p class="math-say">Lượt ghé trang không phải con số cho vui. Đó là người lạ vừa xem bài của bạn, thấy đủ tò mò để bấm vào xem bạn là ai, bạn làm gì, bạn bán gì. <strong>Nó là bước ngay trước khi người ta bấm follow hoặc nhắn tin cho bạn.</strong></p>
+    </div>
+
+    <p style="margin-top: 26px;">Và giá ads thì chỉ có tăng. Mỗi năm mỗi mắc, vì càng ngày càng đông người tranh nhau cùng một tệp người xem.</p>
+    <p>Không biết cách tự kéo người lạ về, bạn sẽ phải mua. Mua mãi. Và trả gấp nhiều lần cho đúng cái kết quả mà một cái kênh làm đúng nguyên lý tự tạo ra được.</p>
+  </div>
+</div>
+
 <!-- PRICING -->
 <div class="wrap">
   <div class="section" style="padding-top: 0;">
@@ -888,7 +984,7 @@
     <div class="price-box">
       <span class="price-lbl">No Crying IG · Trọn gói</span>
       <div class="price-num">2.500.000đ</div>
-      <p class="price-note">Một lần duy nhất</p>
+      <p class="price-note">Một lần duy nhất · giá tới hết chủ nhật 13/09</p>
       <ul class="price-includes">
         <li>3 module trong 1 buổi coaching 2 tiếng</li>
         <li>1 tháng coaching và support 1-1 qua chat, voice</li>
@@ -899,7 +995,28 @@
       </ul>
     </div>
 
-    <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);">2.5 triệu = chưa đầy 5 ngày bạn chạy ads 500k/ngày.<br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
+    <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);">2.5 triệu = chưa tới 8 tiếng chạy cái ads ở trên.<br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
+
+    <p style="text-align: center; margin-top: 40px; font-size: 15px; color: rgba(248,247,245,0.72);"><strong>Học phí tăng theo mốc. Không có giá nào quay lại.</strong></p>
+    <div class="ladder">
+      <div class="ladder-row now">
+        <span class="ladder-when"><span class="ladder-now-tag">bây giờ</span>Tới hết 13/09</span>
+        <span class="ladder-price">2.500.000đ</span>
+      </div>
+      <div class="ladder-row">
+        <span class="ladder-when">14/09 tới 30/09</span>
+        <span class="ladder-price">2.800.000đ</span>
+      </div>
+      <div class="ladder-row">
+        <span class="ladder-when">01/10 tới 15/10</span>
+        <span class="ladder-price">3.100.000đ</span>
+      </div>
+      <div class="ladder-row">
+        <span class="ladder-when">16/10 tới 31/10</span>
+        <span class="ladder-price">3.400.000đ</span>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 20px; font-size: 14px; color: rgba(248,247,245,0.45);">Cùng một buổi coaching, cùng một nội dung. Chỉ khác ngày bạn quyết định.</p>
   </div>
 </div>
 
