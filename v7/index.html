@@ -624,6 +624,34 @@
     .ladder-row { padding: 13px 14px; }
     .ladder-when { font-size: 13px; }
   }
+  /* LADDER STATES */
+  .ladder-row.past { opacity: 0.45; }
+  .ladder-row.past .ladder-when, .ladder-row.past .ladder-price { text-decoration: line-through; text-decoration-thickness: 1.5px; }
+  .ladder-past-tag {
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(248,247,245,0.6); border: 1px solid rgba(248,247,245,0.25);
+    padding: 3px 8px; font-weight: 600; margin-right: 10px;
+    display: inline-block; text-decoration: none;
+  }
+  .ladder-close {
+    max-width: 460px; margin: 3px auto 0; padding: 15px 18px;
+    border: 1px dashed rgba(248,247,245,0.18);
+    display: flex; justify-content: space-between; align-items: center; gap: 14px;
+    font-size: 14px; color: rgba(248,247,245,0.55);
+  }
+  .ladder-close b { font-weight: 600; color: var(--light); letter-spacing: 0.04em; }
+  .why-close {
+    max-width: 520px; margin: 34px auto 0; padding: 26px 24px;
+    border-left: 3px solid var(--accent); background: rgba(248,247,245,0.03);
+  }
+  .why-close p { font-size: 15px; line-height: 1.8; margin-bottom: 12px; }
+  .why-close p:first-child { color: var(--light); font-weight: 600; }
+  .closed-note {
+    max-width: 480px; margin: 0 auto; text-align: center;
+    padding: 36px 24px; border: 1px solid rgba(248,247,245,0.12);
+    background: rgba(248,247,245,0.03);
+  }
+  .closed-note p:first-child { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--light); margin-bottom: 10px; }
 </style>
 </head>
 <body>
@@ -1037,22 +1065,33 @@
     <div class="divider center"></div>
     <h2 style="text-align: center;">Chi phí.</h2>
 
-    <div class="ladder">
-      <div class="ladder-row now">
+    <div class="ladder" id="ladder">
+      <div class="ladder-row now" data-end="2026-09-14T00:00:00+07:00" data-price="2.500.000đ" data-label="tới hết 13/09">
         <span class="ladder-when"><span class="ladder-now-tag">bây giờ</span>Tới hết chủ nhật 13/09</span>
         <span class="ladder-right"><span class="ladder-price">2.500.000đ</span></span>
       </div>
-      <div class="ladder-row">
+      <div class="ladder-row" data-end="2026-09-21T00:00:00+07:00" data-price="2.800.000đ" data-label="14/09 tới 20/09">
         <span class="ladder-when">14/09 tới 20/09</span>
         <span class="ladder-right"><span class="ladder-step">+300k</span><span class="ladder-price">2.800.000đ</span></span>
       </div>
-      <div class="ladder-row">
+      <div class="ladder-row" data-end="2026-09-28T00:00:00+07:00" data-price="3.200.000đ" data-label="21/09 tới 27/09">
         <span class="ladder-when">21/09 tới 27/09</span>
         <span class="ladder-right"><span class="ladder-step">+400k</span><span class="ladder-price">3.200.000đ</span></span>
       </div>
+      <div class="ladder-row" data-end="2026-10-01T00:00:00+07:00" data-price="3.700.000đ" data-label="28/09 tới 30/09">
+        <span class="ladder-when">28/09 tới 30/09</span>
+        <span class="ladder-right"><span class="ladder-step">+500k</span><span class="ladder-price">3.700.000đ</span></span>
+      </div>
     </div>
-    <p style="text-align: center; margin-top: 18px; font-size: 14px; color: rgba(248,247,245,0.55);">Sau 27/09, mỗi mốc tiếp theo tăng thêm 500.000đ.</p>
-    <p style="text-align: center; margin-top: 10px; font-size: 14px; color: rgba(248,247,245,0.45);">Cùng một buổi coaching, cùng một nội dung.<br>Chỉ khác ngày bạn quyết định.</p>
+    <div class="ladder-close"><span>Sau 30/09</span><b>Đóng khoá</b></div>
+
+    <div class="why-close">
+      <p>Mình chỉ mở tới hết 30/09 rồi đóng khoá.</p>
+      <p>Coaching Instagram không phải công việc chính của mình. Đây là kinh nghiệm riêng mình tự đi, tự test mà có, và mình không muốn kéo dài chuyện dạy nó.</p>
+      <p>Cách làm này càng nhiều người biết thì càng khó ăn cho những người biết sau. Nên mình giữ nhỏ, mở tới hết tháng 9 thôi.</p>
+    </div>
+
+    <p style="text-align: center; margin-top: 26px; font-size: 14px; color: rgba(248,247,245,0.45);">Cùng một buổi coaching, cùng một nội dung.<br>Chỉ khác ngày bạn quyết định.</p>
 
     <div class="price-box" style="margin-top: 40px;">
       <span class="price-lbl">No Crying IG · Trọn gói</span>
@@ -1066,7 +1105,7 @@
       </ul>
     </div>
 
-    <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);">2.5 triệu = chưa tới 8 tiếng chạy cái ads ở trên.<br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
+    <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);"><span id="ads-compare">2,5 triệu = chưa tới 4 tiếng chạy cái ads ở trên.</span><br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
   </div>
 </div>
 
@@ -1143,12 +1182,12 @@
     <div class="divider center"></div>
     <h2 style="text-align: center;">Đăng ký.</h2>
     <!-- PAYMENT -->
-    <div class="payment-section">
+    <div class="payment-section" id="pay-open">
       <img src="../tracey viral/IMG_7256.JPG" alt="QR thanh toán" class="payment-qr">
       <div class="payment-info">
         <div class="payment-row">
           <span class="payment-key">Số tiền</span>
-          <span class="payment-val" style="color: var(--accent);">theo mốc ở phần Chi phí</span>
+          <span class="payment-val" style="color: var(--accent);" id="pay-amount">2.500.000đ<br><span style="font-size: 12px; font-weight: 400; color: rgba(248,247,245,0.45);">mốc tới hết 13/09</span></span>
         </div>
         <div class="payment-row">
           <span class="payment-key">Nội dung CK</span>
@@ -1156,6 +1195,10 @@
         </div>
       </div>
       <p class="payment-note">Bạn gửi bill qua Instagram, mình sẽ xác nhận và hẹn lịch coaching.</p>
+    </div>
+    <div class="closed-note" id="pay-closed" hidden>
+      <p>Khoá đã đóng.</p>
+      <p>No Crying IG chỉ mở tới hết 30/09. Cảm ơn bạn đã ghé trang.</p>
     </div>
   </div>
 </div>
@@ -1165,6 +1208,48 @@
 </footer>
 
 <script>
+(function () {
+  // ?ngay=2026-09-20 để xem trước trạng thái của một ngày bất kỳ
+  var q = new URLSearchParams(location.search).get('ngay');
+  var now = q ? new Date(q + 'T12:00:00+07:00') : new Date();
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#ladder .ladder-row'));
+  var current = null;
+
+  rows.forEach(function (row) {
+    var end = new Date(row.getAttribute('data-end'));
+    var when = row.querySelector('.ladder-when');
+    var tag = when.querySelector('.ladder-now-tag, .ladder-past-tag');
+    if (tag) tag.remove();
+    row.classList.remove('now', 'past');
+
+    if (now >= end) {
+      row.classList.add('past');
+      var t = document.createElement('span');
+      t.className = 'ladder-past-tag'; t.textContent = 'đã hết';
+      when.insertBefore(t, when.firstChild);
+    } else if (!current) {
+      current = row;
+      row.classList.add('now');
+      var n = document.createElement('span');
+      n.className = 'ladder-now-tag'; n.textContent = 'bây giờ';
+      when.insertBefore(n, when.firstChild);
+    }
+  });
+
+  var pay = document.getElementById('pay-amount');
+  var cmp = document.getElementById('ads-compare');
+  if (current) {
+    var price = current.getAttribute('data-price');
+    pay.innerHTML = price + '<br><span style="font-size: 12px; font-weight: 400; color: rgba(248,247,245,0.45);">mốc ' + current.getAttribute('data-label') + '</span>';
+    var trieu = parseInt(price.replace(/\D/g, ''), 10) / 1e6;
+    var gio = Math.ceil(trieu * 1e6 / (18339491 / 24));
+    cmp.textContent = String(trieu).replace('.', ',') + ' triệu = chưa tới ' + gio + ' tiếng chạy cái ads ở trên.';
+  } else {
+    document.getElementById('pay-open').hidden = true;
+    document.getElementById('pay-closed').hidden = false;
+    cmp.textContent = 'Khoá đã đóng sau 30/09.';
+  }
+})();
 </script>
 
 </body>
