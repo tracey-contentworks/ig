@@ -166,14 +166,23 @@
 // ====== CHỈNH Ở ĐÂY ======
 var CAUHINH = {
   endpoint: '',                    // link Apps Script để lưu feedback
-  taiLieu:  '',                    // link tài liệu buổi học
-  report:   ''                     // link report riêng của học viên
+  taiLieu:  '',                    // tài liệu chung, ai cũng nhận (để trống nếu không có)
+  report:   ''                     // report mặc định, thường để trống vì mỗi người một link
 };
 // =========================
+
+// Link riêng từng học viên: đọc từ đuôi ?k= của đường link
+var RIENG = {};
+try {
+  var k = new URLSearchParams(location.search).get('k');
+  if (k) RIENG = JSON.parse(decodeURIComponent(escape(atob(k.replace(/-/g, '+').replace(/_/g, '/')))));
+} catch (e) {}
 
 (function () {
   var sao = 0, chon = [];
   var $ = function (i) { return document.getElementById(i); };
+
+  if (RIENG.t) $('ten').value = RIENG.t;
 
   $('stars').addEventListener('click', function (e) {
     var s = e.target.closest('.star'); if (!s) return;
@@ -200,15 +209,15 @@ var CAUHINH = {
     var data = {
       luc: new Date().toISOString(), sao: sao, truoc: $('truoc').value.trim(),
       sau: $('sau').value.trim(), phan: chon.join(', '), khuyen: $('khuyen').value.trim(),
-      ten: $('ten').value.trim(), dongY: $('ok').checked ? 'co' : 'khong'
+      ten: $('ten').value.trim(), dongY: $('ok').checked ? 'co' : 'khong', hocVien: RIENG.t || ''
     };
 
     var xong = function () {
       $('f').style.display = 'none';
       var d = $('done'); d.style.display = 'block';
       var fs = $('files'), co = false;
-      [[CAUHINH.taiLieu, 'Tài liệu buổi học', 'Toàn bộ nội dung đã học, xem lại bất cứ lúc nào'],
-       [CAUHINH.report, 'Report riêng cho kênh của bạn', 'Những gì mình soi được và hướng đi tiếp theo']
+      [[RIENG.d || CAUHINH.taiLieu, 'Tài liệu buổi học', 'Toàn bộ nội dung đã học, xem lại bất cứ lúc nào'],
+       [RIENG.r || CAUHINH.report, 'Report riêng cho kênh của bạn', 'Những gì mình soi được và hướng đi tiếp theo']
       ].forEach(function (x) {
         if (!x[0]) return; co = true;
         fs.insertAdjacentHTML('beforeend',
