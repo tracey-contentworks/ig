@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback · No Crying IG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --dark: #000; --light: #f8f7f5; --accent: #c6e65c; }
+  body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--dark); color: var(--light); font-size: 16px; line-height: 1.7; }
+  .wrap { max-width: 620px; margin: 0 auto; padding: 0 24px; }
+  .header-bar { background: var(--accent); color: var(--dark); padding: 12px 24px; text-align: center; font-size: 14px; font-weight: 600; }
+  .hero { padding: 64px 0 36px; }
+  .label { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 18px; display: block; }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(32px,6vw,52px); line-height: 1.1; margin-bottom: 18px; }
+  h1 em { font-style: italic; color: var(--accent); }
+  p { color: rgba(248,247,245,.78); margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+  .divider { width: 44px; height: 2px; background: var(--accent); margin-bottom: 30px; }
+
+  .unlock { border: 1px solid rgba(198,230,92,.3); background: rgba(198,230,92,.06); padding: 22px 22px; margin-bottom: 44px; }
+  .unlock b { color: var(--accent); }
+
+  form { display: flex; flex-direction: column; gap: 34px; padding-bottom: 20px; }
+  .q { display: flex; flex-direction: column; gap: 12px; }
+  .q-t { font-size: 17px; font-weight: 600; line-height: 1.5; }
+  .q-t i { font-style: normal; color: var(--accent); }
+  .q-s { font-size: 13px; color: rgba(248,247,245,.42); margin: -6px 0 0; line-height: 1.6; }
+  textarea, input[type=text] {
+    background: rgba(248,247,245,.04); border: 1px solid rgba(248,247,245,.12); color: var(--light);
+    font-family: inherit; font-size: 16px; padding: 14px 15px; outline: none; width: 100%;
+    transition: border-color .2s; resize: vertical; -webkit-appearance: none; border-radius: 0;
+  }
+  textarea { min-height: 96px; line-height: 1.6; }
+  textarea:focus, input[type=text]:focus { border-color: rgba(198,230,92,.55); }
+  ::placeholder { color: rgba(248,247,245,.22); }
+
+  .stars { display: flex; gap: 8px; }
+  .star {
+    flex: 1; padding: 14px 0; text-align: center; cursor: pointer; user-select: none;
+    border: 1px solid rgba(248,247,245,.12); background: rgba(248,247,245,.04);
+    font-size: 22px; line-height: 1; transition: all .15s; color: rgba(248,247,245,.25);
+  }
+  .star.on { border-color: rgba(198,230,92,.5); background: rgba(198,230,92,.1); color: var(--accent); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    padding: 10px 15px; border: 1px solid rgba(248,247,245,.12); background: rgba(248,247,245,.04);
+    font-size: 14px; color: rgba(248,247,245,.6); cursor: pointer; user-select: none; transition: all .15s;
+  }
+  .chip.on { border-color: rgba(198,230,92,.5); background: rgba(198,230,92,.1); color: var(--light); }
+
+  .consent { display: flex; gap: 11px; align-items: flex-start; font-size: 14px; color: rgba(248,247,245,.6); cursor: pointer; line-height: 1.6; }
+  .consent input { accent-color: var(--accent); width: 17px; height: 17px; margin-top: 3px; flex-shrink: 0; cursor: pointer; }
+
+  button {
+    background: var(--accent); color: var(--dark); border: 0; padding: 17px 30px;
+    font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer; transition: opacity .2s; width: 100%;
+  }
+  button:hover { opacity: .85; }
+  button:disabled { opacity: .5; cursor: default; }
+  .err { color: #ff8b6b; font-size: 14px; display: none; }
+
+  .done { display: none; padding: 40px 0 10px; }
+  .done h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px,5vw,42px); line-height: 1.15; margin-bottom: 16px; }
+  .done h2 em { font-style: italic; color: var(--accent); }
+  .files { display: flex; flex-direction: column; gap: 3px; margin: 28px 0 24px; }
+  .file {
+    display: flex; justify-content: space-between; align-items: center; gap: 14px;
+    padding: 20px 22px; border: 1px solid rgba(198,230,92,.3); background: rgba(198,230,92,.06);
+    color: var(--light); text-decoration: none; transition: background .15s;
+  }
+  .file:hover { background: rgba(198,230,92,.12); }
+  .file-n { font-size: 16px; font-weight: 600; }
+  .file-s { font-size: 13px; color: rgba(248,247,245,.45); margin-top: 2px; }
+  .file-go { color: var(--accent); font-size: 20px; flex-shrink: 0; }
+  footer { padding: 46px 24px; text-align: center; font-size: 13px; color: rgba(248,247,245,.2); }
+</style>
+</head>
+<body>
+
+<div class="header-bar">No Crying IG · @tracey.contentworks</div>
+
+<div class="wrap">
+  <div class="hero">
+    <span class="label">Sau buổi coaching</span>
+    <h1>Kể cho mình nghe <em>buổi học thế nào.</em></h1>
+    <p>Mất khoảng 2 phút. Mình đọc hết từng cái một, và nó giúp mình dạy tốt hơn cho người sau.</p>
+  </div>
+
+  <div class="unlock">
+    <p>Gửi xong bạn nhận ngay <b>tài liệu buổi học</b> và <b>bản report riêng cho kênh của bạn</b>.</p>
+  </div>
+
+  <form id="f" novalidate>
+    <div class="q">
+      <div class="q-t">Buổi học vừa rồi, bạn chấm mấy sao? <i>*</i></div>
+      <div class="stars" id="stars">
+        <div class="star" data-v="1">★</div><div class="star" data-v="2">★</div><div class="star" data-v="3">★</div><div class="star" data-v="4">★</div><div class="star" data-v="5">★</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-t">Trước buổi học, bạn đang kẹt nhất ở chỗ nào?</div>
+      <p class="q-s">Một hai câu thôi, viết kiểu nói chuyện cũng được.</p>
+      <textarea id="truoc" placeholder="Ví dụ: đăng đều mà reach cứ quanh quẩn tệp cũ, không biết sai ở đâu..."></textarea>
+    </div>
+
+    <div class="q">
+      <div class="q-t">Sau buổi học, thứ bạn thấy rõ nhất là gì? <i>*</i></div>
+      <p class="q-s">Điều gì bạn hiểu ra mà trước đó chưa ai nói cho bạn.</p>
+      <textarea id="sau" placeholder="Ví dụ: hoá ra mình đang làm content cho người đã follow, chứ không phải cho người lạ..."></textarea>
+    </div>
+
+    <div class="q">
+      <div class="q-t">Phần nào đáng giá nhất với bạn?</div>
+      <p class="q-s">Chọn bao nhiêu cũng được.</p>
+      <div class="chips" id="chips">
+        <div class="chip">Check kênh</div>
+        <div class="chip">Cách thuật toán hoạt động</div>
+        <div class="chip">Viral system</div>
+        <div class="chip">Từ view ra đơn</div>
+        <div class="chip">Cách lên ý tưởng content</div>
+        <div class="chip">Được soi kênh trực tiếp</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-t">Có người đang phân vân không biết nên học hay không. Bạn nói gì với họ? <i>*</i></div>
+      <p class="q-s">Cứ nói thật như đang nhắn cho một người bạn.</p>
+      <textarea id="khuyen" placeholder="..."></textarea>
+    </div>
+
+    <div class="q">
+      <div class="q-t">Tên và Instagram của bạn</div>
+      <p class="q-s">Để mình biết là ai, và ghi nguồn nếu có trích lại.</p>
+      <input type="text" id="ten" placeholder="Tên · @instagram">
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" id="ok" checked>
+      <span>Mình đồng ý cho Tracey trích lại nội dung này khi chia sẻ công khai. Bỏ chọn nếu bạn muốn giữ riêng.</span>
+    </label>
+
+    <div>
+      <button type="submit" id="btn">Gửi và nhận tài liệu</button>
+      <p class="err" id="err"></p>
+    </div>
+  </form>
+
+  <div class="done" id="done">
+    <div class="divider"></div>
+    <h2>Cảm ơn bạn <em>thật nhiều.</em></h2>
+    <p>Mình đọc hết, và mình sẽ nhớ. Tài liệu của bạn ở ngay dưới đây.</p>
+    <div class="files" id="files"></div>
+    <p style="font-size: 14px; color: rgba(248,247,245,.45);">Có gì cần hỏi thêm thì cứ nhắn mình bên Instagram.</p>
+  </div>
+</div>
+
+<footer>No Crying IG · @tracey.contentworks</footer>
+
+<script data-goatcounter="https://tracey.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+// ====== CHỈNH Ở ĐÂY ======
+var CAUHINH = {
+  endpoint: '',                    // link Apps Script để lưu feedback
+  taiLieu:  '',                    // link tài liệu buổi học
+  report:   ''                     // link report riêng của học viên
+};
+// =========================
+
+(function () {
+  var sao = 0, chon = [];
+  var $ = function (i) { return document.getElementById(i); };
+
+  $('stars').addEventListener('click', function (e) {
+    var s = e.target.closest('.star'); if (!s) return;
+    sao = +s.dataset.v;
+    [].forEach.call(this.children, function (c, i) { c.classList.toggle('on', i < sao); });
+  });
+
+  $('chips').addEventListener('click', function (e) {
+    var c = e.target.closest('.chip'); if (!c) return;
+    c.classList.toggle('on');
+    chon = [].filter.call(this.children, function (x) { return x.classList.contains('on'); })
+             .map(function (x) { return x.textContent; });
+  });
+
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var err = $('err');
+    if (!sao) { err.textContent = 'Bạn chấm sao giúp mình nha.'; err.style.display = 'block'; return; }
+    if (!$('sau').value.trim()) { err.textContent = 'Bạn viết giúp mình câu "sau buổi học" nha.'; err.style.display = 'block'; $('sau').focus(); return; }
+    if (!$('khuyen').value.trim()) { err.textContent = 'Còn câu cuối nữa thôi.'; err.style.display = 'block'; $('khuyen').focus(); return; }
+    err.style.display = 'none';
+    $('btn').disabled = true; $('btn').textContent = 'Đang gửi...';
+
+    var data = {
+      luc: new Date().toISOString(), sao: sao, truoc: $('truoc').value.trim(),
+      sau: $('sau').value.trim(), phan: chon.join(', '), khuyen: $('khuyen').value.trim(),
+      ten: $('ten').value.trim(), dongY: $('ok').checked ? 'co' : 'khong'
+    };
+
+    var xong = function () {
+      $('f').style.display = 'none';
+      var d = $('done'); d.style.display = 'block';
+      var fs = $('files'), co = false;
+      [[CAUHINH.taiLieu, 'Tài liệu buổi học', 'Toàn bộ nội dung đã học, xem lại bất cứ lúc nào'],
+       [CAUHINH.report, 'Report riêng cho kênh của bạn', 'Những gì mình soi được và hướng đi tiếp theo']
+      ].forEach(function (x) {
+        if (!x[0]) return; co = true;
+        fs.insertAdjacentHTML('beforeend',
+          '<a class="file" href="' + x[0] + '" target="_blank" rel="noopener"><span><span class="file-n">' +
+          x[1] + '</span><span class="file-s">' + x[2] + '</span></span><span class="file-go">-&gt;</span></a>');
+      });
+      if (!co) fs.insertAdjacentHTML('beforeend',
+        '<div class="file" style="cursor:default"><span><span class="file-n">Mình gửi tài liệu qua Instagram cho bạn nha</span><span class="file-s">Nhắn mình một tiếng là có liền</span></span></div>');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    try { localStorage.setItem('fb_' + Date.now(), JSON.stringify(data)); } catch (e) {}
+
+    if (!CAUHINH.endpoint) { xong(); return; }
+    fetch(CAUHINH.endpoint, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data)
+    }).then(xong).catch(xong);
+  });
+})();
+</script>
+
+</body>
+</html>
