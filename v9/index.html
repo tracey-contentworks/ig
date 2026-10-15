@@ -659,27 +659,6 @@
   }
   .ladder-row.final { border-color: rgba(248,247,245,0.2); }
   .ladder-row.final .ladder-price { color: var(--light); }
-  /* BIỂU ĐỒ GIÁ DỐC LÊN */
-  .doc { max-width: 560px; margin: 0 auto 30px; }
-  .doc-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; gap: 12px; }
-  .doc-lbl { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(248,247,245,.4); font-weight: 600; }
-  .doc-now { font-size: 13px; color: var(--accent); font-weight: 600; }
-  .doc-bars { display: flex; align-items: flex-end; gap: 3px; height: 128px; }
-  .doc-col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; position: relative; }
-  .doc-bar { width: 100%; background: rgba(248,247,245,.10); transition: height .2s; }
-  .doc-col.past .doc-bar { background: rgba(248,247,245,.16); }
-  .doc-col.today .doc-bar { background: var(--accent); }
-  .doc-col.today::after {
-    content: attr(data-gia); position: absolute; left: 50%; transform: translateX(-50%);
-    bottom: calc(100% + 7px); white-space: nowrap;
-    font-size: 11px; font-weight: 600; color: var(--dark); background: var(--accent); padding: 3px 7px;
-  }
-  .doc-days { display: flex; gap: 3px; margin-top: 8px; }
-  .doc-day { flex: 1; text-align: center; font-size: 9px; color: rgba(248,247,245,.3); overflow: hidden; }
-  .doc-col.today ~ .doc-col .doc-bar { background: rgba(198,230,92,.18); }
-  .doc-ends { display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; color: rgba(248,247,245,.42); }
-  .doc-ends b { color: rgba(248,247,245,.7); font-weight: 600; }
-  @media (max-width: 600px) { .doc-bars { height: 104px; } .doc-day { font-size: 8px; } }
 </style>
 </head>
 <body>
@@ -1093,10 +1072,8 @@
     <div class="divider center"></div>
     <h2 style="text-align: center;">Chi phí.</h2>
 
-    <div class="doc" id="doc"><div class="doc-top"><span class="doc-lbl">Giá đi lên mỗi ngày</span><span class="doc-now">Hôm nay 15/10</span></div><div class="doc-bars"><div class="doc-col today" data-gia="1.500.000đ"><div class="doc-bar" style="height:41%"></div></div><div class="doc-col next" data-gia="1.600.000đ"><div class="doc-bar" style="height:45%"></div></div><div class="doc-col next" data-gia="1.700.000đ"><div class="doc-bar" style="height:49%"></div></div><div class="doc-col next" data-gia="1.800.000đ"><div class="doc-bar" style="height:53%"></div></div><div class="doc-col next" data-gia="1.900.000đ"><div class="doc-bar" style="height:57%"></div></div><div class="doc-col next" data-gia="2.000.000đ"><div class="doc-bar" style="height:60%"></div></div><div class="doc-col next" data-gia="2.100.000đ"><div class="doc-bar" style="height:64%"></div></div><div class="doc-col next" data-gia="2.200.000đ"><div class="doc-bar" style="height:68%"></div></div><div class="doc-col next" data-gia="2.300.000đ"><div class="doc-bar" style="height:72%"></div></div><div class="doc-col next" data-gia="2.400.000đ"><div class="doc-bar" style="height:76%"></div></div><div class="doc-col next" data-gia="2.500.000đ"><div class="doc-bar" style="height:80%"></div></div><div class="doc-col next" data-gia="2.600.000đ"><div class="doc-bar" style="height:84%"></div></div><div class="doc-col next" data-gia="2.700.000đ"><div class="doc-bar" style="height:88%"></div></div><div class="doc-col next" data-gia="2.800.000đ"><div class="doc-bar" style="height:92%"></div></div><div class="doc-col next" data-gia="2.900.000đ"><div class="doc-bar" style="height:96%"></div></div><div class="doc-col next" data-gia="3.000.000đ"><div class="doc-bar" style="height:100%"></div></div></div><div class="doc-days"><div class="doc-day">15</div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day">20</div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day">25</div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day"></div><div class="doc-day">30</div></div><div class="doc-ends"><span>15/10 · <b>1.500.000đ</b></span><span>30/10 · <b>3.000.000đ</b></span></div></div>
-
     <div class="ladder" id="ladder">
-<div class="ladder-row now"><span class="ladder-when"><span class="ladder-now-tag">hôm nay</span>15/10</span><span class="ladder-right"><span class="ladder-price">1.500.000đ</span></span></div><div class="ladder-row next"><span class="ladder-when"><span class="ladder-now-tag">ngày mai</span>16/10</span><span class="ladder-right"><span class="ladder-step">+100k</span><span class="ladder-price">1.600.000đ</span></span></div><div class="ladder-gap">mỗi ngày tăng thêm 100.000đ</div><div class="ladder-row final"><span class="ladder-when"><span class="ladder-now-tag">ngày cuối</span>30/10</span><span class="ladder-right"><span class="ladder-price">3.000.000đ</span></span></div>
+<div class="ladder-row past"><span class="ladder-when"><span class="ladder-past-tag">đã hết</span>11/10</span><span class="ladder-right"><span class="ladder-price">1.100.000đ</span></span></div><div class="ladder-row past"><span class="ladder-when"><span class="ladder-past-tag">đã hết</span>12/10</span><span class="ladder-right"><span class="ladder-price">1.200.000đ</span></span></div><div class="ladder-row past"><span class="ladder-when"><span class="ladder-past-tag">đã hết</span>13/10</span><span class="ladder-right"><span class="ladder-price">1.300.000đ</span></span></div><div class="ladder-row past"><span class="ladder-when"><span class="ladder-past-tag">đã hết</span>14/10</span><span class="ladder-right"><span class="ladder-price">1.400.000đ</span></span></div><div class="ladder-row now"><span class="ladder-when"><span class="ladder-now-tag">hôm nay</span>15/10</span><span class="ladder-right"><span class="ladder-price">1.500.000đ</span></span></div><div class="ladder-row next"><span class="ladder-when"><span class="ladder-now-tag">ngày mai</span>16/10</span><span class="ladder-right"><span class="ladder-step">+100k</span><span class="ladder-price">1.600.000đ</span></span></div><div class="ladder-gap">mỗi ngày tăng thêm 100.000đ</div><div class="ladder-row final"><span class="ladder-when"><span class="ladder-now-tag">ngày cuối</span>30/10</span><span class="ladder-right"><span class="ladder-price">3.000.000đ</span></span></div>
     </div>
     <div class="ladder-close"><span>Sau 30/10</span><b>Đóng khoá</b></div>
 
@@ -1223,8 +1200,8 @@
 </footer>
 
 <script>
-// ===== Giá theo ngày: 15/10 = 1.500.000đ, mỗi ngày +100.000đ, 30/10 = 3.000.000đ, sau đó đóng khoá =====
-var GIA = { y: 2026, m: 10, dStart: 15, dEnd: 30, base: 1500000, step: 100000, showPast: 5 };
+// ===== Giá theo ngày: 11/10 = 1.100.000đ, mỗi ngày +100.000đ, 15/10 = 1.500.000đ, 30/10 = 3.000.000đ =====
+var GIA = { y: 2026, m: 10, dStart: 11, dEnd: 30, base: 1100000, step: 100000, showPast: 5 };
 
 function giaFmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ'; }
 function giaDay(d) { return (d < 10 ? '0' + d : d) + '/' + (GIA.m < 10 ? '0' + GIA.m : GIA.m); }
@@ -1243,23 +1220,6 @@ function giaRow(cls, tag, d, stepChip) {
     '<span class="ladder-when">' + (tag ? '<span class="' + (cls === 'past' ? 'ladder-past-tag' : 'ladder-now-tag') + '">' + tag + '</span>' : '') + giaDay(d) + '</span>' +
     '<span class="ladder-right">' + (stepChip ? '<span class="ladder-step">' + stepChip + '</span>' : '') +
     '<span class="ladder-price">' + giaFmt(giaPrice(d)) + '</span></span></div>';
-}
-
-function giaDoc(today) {
-  var s = GIA.dStart, e = GIA.dEnd, cao = 0, bars = '', days = '';
-  var max = giaPrice(e), min = giaPrice(s) * 0.55;
-  for (var d = s; d <= e; d++) {
-    var p = giaPrice(d), cls = d < today ? 'past' : (d === today ? 'today' : 'next');
-    cao = Math.round((p - min) / (max - min) * 86 + 14);
-    bars += '<div class="doc-col ' + cls + '" data-gia="' + giaFmt(p) + '">' +
-            '<div class="doc-bar" style="height:' + cao + '%"></div></div>';
-    days += '<div class="doc-day">' + (d % 5 === 0 || d === s || d === e ? d : '') + '</div>';
-  }
-  return '<div class="doc-top"><span class="doc-lbl">Giá đi lên mỗi ngày</span>' +
-         '<span class="doc-now">' + (today <= e ? 'Hôm nay ' + giaDay(Math.max(today, s)) : 'Đã đóng') + '</span></div>' +
-         '<div class="doc-bars">' + bars + '</div><div class="doc-days">' + days + '</div>' +
-         '<div class="doc-ends"><span>' + giaDay(s) + ' · <b>' + giaFmt(giaPrice(s)) + '</b></span>' +
-         '<span>' + giaDay(e) + ' · <b>' + giaFmt(giaPrice(e)) + '</b></span></div>';
 }
 
 function giaRender(today) {
@@ -1284,7 +1244,6 @@ function giaRender(today) {
   var today = giaToday(now);
 
   document.getElementById('ladder').innerHTML = giaRender(today);
-  document.getElementById('doc').innerHTML = giaDoc(today);
 
   var pay = document.getElementById('pay-amount');
   var cmp = document.getElementById('ads-compare');
