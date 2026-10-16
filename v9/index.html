@@ -660,6 +660,8 @@
   .ladder-row.final { border-color: rgba(248,247,245,0.2); }
   .ladder-row.final .ladder-price { color: var(--light); }
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2TKEX2GYC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z2TKEX2GYC');</script>
 </head>
 <body>
 
@@ -1162,7 +1164,7 @@
     <p>Muốn bạn tự do làm content, thể hiện bản thân, để có thể làm thương hiệu cá nhân, KOC, KOL, hay bất cứ gì bạn muốn mà không cần phải lo content này có flop hay không.</p>
     <p>Dù bạn là ai trong số đó, mình muốn bạn đọc trang này và thấy mình trong đó. Vì nguyên lý là như nhau. Kênh tự viral là tài sản. Không ai lấy lại được.</p>
     <div style="margin-top: 40px;">
-      <a href="javascript:void(0)" onclick="document.getElementById('thanh-toan').scrollIntoView({behavior:'smooth'})" class="btn-main">Đăng ký ngay -></a>
+      <a href="javascript:void(0)" onclick="document.getElementById('thanh-toan').scrollIntoView({behavior:'smooth'})" class="btn-main" data-goatcounter-click="v9-dang-ky">Đăng ký ngay -></a>
     </div>
     <p style="margin-top: 20px; font-size: 13px; color: rgba(248,247,245,0.28);">@tracey.contentworks</p>
   </div>
@@ -1263,6 +1265,17 @@ function giaRender(today) {
 <script>window.goatcounter = { path: function () { return location.pathname; } };</script>
 <script data-goatcounter="https://tracey.goatcounter.com/count"
         async src="https://gc.zgo.at/count.js"></script>
+<script>
+(function(){
+  var b=document.querySelector('.btn-main');
+  if(b) b.addEventListener('click',function(){ if(window.gtag) gtag('event','v9_dang_ky',{transport_type:'beacon'}); });
+  var t=document.getElementById('thanh-toan');
+  if(t && 'IntersectionObserver' in window){
+    var seen=false, io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && !seen){ seen=true; if(window.gtag) gtag('event','v9_xem_thanh_toan'); io.disconnect(); } }); },{threshold:0.1});
+    io.observe(t);
+  }
+})();
+</script>
 </body>
 </html>
 
