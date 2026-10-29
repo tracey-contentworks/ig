@@ -1076,17 +1076,21 @@
 
     <div class="price-box">
       <span class="price-lbl">No Crying IG · Trọn gói</span>
-      <div class="price-num">2.900.000đ</div>
-      <p class="price-note" style="margin-bottom: 0;">Một lần duy nhất</p>
+      <div class="price-num" id="gia-nay">2.500.000đ</div>
+      <p class="price-note" style="margin-bottom: 0;"><span id="gia-tuan">Giá tuần này</span> · Một lần duy nhất</p>
     </div>
-    <div class="ladder-close"><span>Một lượt người lạ ghé trang, nếu mua</span><b>121.000đ</b></div>
+
+    <div class="ladder" id="bang-tuan">
+<div class="ladder-row now"><span class="ladder-when"><span class="ladder-now-tag">tuần này</span>tới 08/11</span><span class="ladder-right"><span class="ladder-price">2.500.000đ</span></span></div><div class="ladder-row next"><span class="ladder-when"><span class="ladder-now-tag">tuần sau</span>09/11</span><span class="ladder-right"><span class="ladder-step">+100k</span><span class="ladder-price">2.600.000đ</span></span></div><div class="ladder-gap">mỗi tuần nhích lên 100.000đ</div><div class="ladder-row final"><span class="ladder-when"><span class="ladder-now-tag">cao nhất</span>từ 07/12</span><span class="ladder-right"><span class="ladder-price">3.000.000đ</span></span></div>
+    </div>
+    <div class="ladder-close"><span>Lên tới 3.000.000đ</span><b>Rồi dừng</b></div>
 
     <div class="why-close">
-      <p>2,9 triệu chưa mua được 24 lượt người lạ ghé trang bạn. Kênh mình đẩy về 7.011 lượt trong 7 ngày, không đồng nào.</p>
-      <p>Mình không giục bạn bằng ngày hết hạn. Mình không đóng khoá vào thứ mấy để bạn phải quyết gấp.</p>
-      <p>Nhưng chậm lại không giúp bạn giữ được 2,9 triệu. Nó chỉ đổi chỗ số tiền đó. Tháng sau bạn vẫn cần người lạ biết đến bạn, và lúc đó bạn trả bằng tiền ads, hoặc trả bằng thêm một tháng đăng bài không ai thấy.</p>
+      <p>Giá nhích lên 100 ngàn mỗi tuần, tới 3 triệu thì dừng hẳn. Không có đồng hồ ngược, không có hạn chót. Bạn vào tuần nào thì trả giá tuần đó.</p>
+      <p>Mình để vậy vì đây là kèm 1-1, không phải khoá thu sẵn. Mỗi tuần mình chỉ làm tốt được với một số người nhất định, nên giá nhích lên là cách mình giữ số đó lại.</p>
+      <p>Và cái mình chỉ, càng ít người biết thì càng ăn. Bạn vào lúc feed còn ít người làm giống cách này thì dễ hơn người vào sau. Chờ thêm thì vừa trả nhiều hơn, vừa nhận được ít hơn.</p>
+      <p>Cả khoá còn chưa bằng 25 lượt người lạ ghé trang bạn, nếu bạn mua số lượt đó bằng ads. Kênh mình đẩy về 7.011 lượt trong 7 ngày, không đồng nào.</p>
       <p>Mình từng đổ 10 tới 15 triệu một tháng vào ads. Hết tiền là hết reach, tháng sau đóng lại từ đầu. Còn cái kênh tự ra view thì học một lần, ở lại với bạn.</p>
-      <p>Giá của việc chờ thêm một tháng không phải là 0đ. Nó chỉ không nằm trên hoá đơn nào để bạn thấy.</p>
     </div>
 
     <div class="price-box" style="margin-top: 40px;">
@@ -1101,7 +1105,7 @@
       </ul>
     </div>
 
-    <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);"><span id="ads-compare">2,9 triệu = chưa tới 4 tiếng chạy cái ads ở trên.</span><br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
+    <p style="text-align: center; margin-top: 24px; font-size: 14px; color: rgba(248,247,245,0.42);"><span id="ads-compare">2,5 triệu = chưa tới 4 tiếng chạy cái ads ở trên.</span><br>Khác là ads hết tiền thì hết reach. Còn kênh tự viral là tài sản, không ai lấy lại được.</p>
   </div>
 </div>
 
@@ -1183,7 +1187,7 @@
       <div class="payment-info">
         <div class="payment-row">
           <span class="payment-key">Số tiền</span>
-          <span class="payment-val" style="color: var(--accent);" id="pay-amount">2.900.000đ</span>
+          <span class="payment-val" style="color: var(--accent);" id="pay-amount">2.500.000đ<br><span style="font-size: 12px; font-weight: 400; color: rgba(248,247,245,0.45);">giá tuần này</span></span>
         </div>
         <div class="payment-row">
           <span class="payment-key">Nội dung CK</span>
@@ -1200,6 +1204,67 @@
 </footer>
 
 <script>
+</script>
+
+<script>
+// ===== Giá theo tuần: tới 08/11 = 2.500.000đ, mỗi thứ hai +100.000đ, từ 07/12 dừng ở 3.000.000đ =====
+var GIA = { base: 2500000, step: 100000, soTuan: 6, showPast: 2 };
+var MOC = Date.UTC(2026, 10, 9);   // thứ hai 09/11/2026, ngày giá lên tuần 2
+
+function giaFmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ'; }
+function giaTien(t) { return GIA.base + GIA.step * (t - 1); }
+
+// số tuần hiện tại theo giờ Việt Nam, kẹp trong 1..soTuan
+function giaTuanNay(now) {
+  var vn = new Date(now.getTime() + 7 * 3600 * 1000);
+  var hnay = Date.UTC(vn.getUTCFullYear(), vn.getUTCMonth(), vn.getUTCDate());
+  var t = 2 + Math.floor((hnay - MOC) / 604800000);
+  return Math.min(Math.max(t, 1), GIA.soTuan);
+}
+
+// nhãn ngày của một tuần: tuần 1 là "tới 08/11", tuần cuối là "từ 07/12", giữa là ngày bắt đầu
+function giaNhan(t) {
+  var hai = function (ms) {
+    var d = new Date(ms);
+    var dd = d.getUTCDate(), mm = d.getUTCMonth() + 1;
+    return (dd < 10 ? '0' + dd : dd) + '/' + (mm < 10 ? '0' + mm : mm);
+  };
+  if (t <= 1) return 'tới ' + hai(MOC - 86400000);
+  var batDau = MOC + (t - 2) * 604800000;
+  return (t === GIA.soTuan ? 'từ ' : '') + hai(batDau);
+}
+
+function giaRow(cls, tag, t, chip) {
+  return '<div class="ladder-row ' + cls + '">' +
+    '<span class="ladder-when"><span class="' + (cls === 'past' ? 'ladder-past-tag' : 'ladder-now-tag') + '">' + tag + '</span>' + giaNhan(t) + '</span>' +
+    '<span class="ladder-right">' + (chip ? '<span class="ladder-step">' + chip + '</span>' : '') +
+    '<span class="ladder-price">' + giaFmt(giaTien(t)) + '</span></span></div>';
+}
+
+function giaRender(t) {
+  var e = GIA.soTuan, html = '';
+  for (var p = Math.max(1, t - GIA.showPast); p < t; p++) html += giaRow('past', 'đã qua', p);
+  html += giaRow('now', t === e ? 'mức cuối' : 'tuần này', t);
+  if (t + 1 <= e) html += giaRow(t + 1 === e ? 'final' : 'next', t + 1 === e ? 'cao nhất' : 'tuần sau', t + 1, '+100k');
+  if (t + 2 < e) html += '<div class="ladder-gap">mỗi tuần nhích lên 100.000đ</div>';
+  if (t + 1 < e) html += giaRow('final', 'cao nhất', e);
+  return html;
+}
+
+(function () {
+  // ?ngay=2026-11-20 để xem trước giá của một ngày bất kỳ
+  var q = new URLSearchParams(location.search).get('ngay');
+  var t = giaTuanNay(q ? new Date(q + 'T12:00:00+07:00') : new Date());
+  var tien = giaTien(t);
+
+  document.getElementById('bang-tuan').innerHTML = giaRender(t);
+  document.getElementById('gia-nay').textContent = giaFmt(tien);
+  document.getElementById('gia-tuan').textContent = t === GIA.soTuan ? 'Mức cuối, không tăng nữa' : 'Giá tuần này';
+  document.getElementById('pay-amount').innerHTML = giaFmt(tien) +
+    '<br><span style="font-size: 12px; font-weight: 400; color: rgba(248,247,245,0.45);">giá tuần này</span>';
+  document.getElementById('ads-compare').textContent =
+    String(tien / 1e6).replace('.', ',') + ' triệu = chưa tới ' + Math.ceil(tien / (18339491 / 24)) + ' tiếng chạy cái ads ở trên.';
+})();
 </script>
 
 <script>window.goatcounter = { path: function () { return location.pathname; } };</script>
