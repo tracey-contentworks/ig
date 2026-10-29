@@ -1081,9 +1081,9 @@
     </div>
 
     <div class="ladder" id="bang-tuan">
-<div class="ladder-row now"><span class="ladder-when"><span class="ladder-now-tag">tuần này</span>tới 08/11</span><span class="ladder-right"><span class="ladder-price">2.500.000đ</span></span></div><div class="ladder-row next"><span class="ladder-when"><span class="ladder-now-tag">tuần sau</span>09/11</span><span class="ladder-right"><span class="ladder-step">+100k</span><span class="ladder-price">2.600.000đ</span></span></div><div class="ladder-gap">mỗi tuần nhích lên 100.000đ</div><div class="ladder-row final"><span class="ladder-when"><span class="ladder-now-tag">cao nhất</span>từ 23/11</span><span class="ladder-right"><span class="ladder-price">2.800.000đ</span></span></div>
+<div class="ladder-row now"><span class="ladder-when"><span class="ladder-now-tag">tuần này</span>tới 08/11</span><span class="ladder-right"><span class="ladder-price">2.500.000đ</span></span></div><div class="ladder-row next"><span class="ladder-when"><span class="ladder-now-tag">tuần sau</span>09/11</span><span class="ladder-right"><span class="ladder-step">+100k</span><span class="ladder-price">2.600.000đ</span></span></div><div class="ladder-gap">mỗi tuần nhích lên 100.000đ</div><div class="ladder-row final"><span class="ladder-when"><span class="ladder-now-tag">cao nhất</span>23/11 tới 30/11</span><span class="ladder-right"><span class="ladder-price">2.800.000đ</span></span></div>
     </div>
-    <div class="ladder-close"><span>Lên tới 2.800.000đ</span><b>Rồi dừng</b></div>
+    <div class="ladder-close"><span>Sau 30/11</span><b>Dừng ở 2.800.000đ</b></div>
 
     <div class="why-close">
       <p>Coaching Instagram không phải công việc chính của mình. Đây là kinh nghiệm riêng mình tự đi, tự test mà có, và mình không muốn kéo dài chuyện dạy nó.</p>
@@ -1204,9 +1204,10 @@
 </script>
 
 <script>
-// ===== Giá theo tuần: tới 08/11 = 2.500.000đ, mỗi thứ hai +100.000đ, từ 23/11 dừng ở 2.800.000đ =====
+// ===== Giá theo tuần: tới 08/11 = 2.500.000đ, mỗi thứ hai +100.000đ, mức cuối 2.800.000đ chạy 23/11 tới 30/11 rồi dừng =====
 var GIA = { base: 2500000, step: 100000, soTuan: 4, showPast: 2 };
 var MOC = Date.UTC(2026, 10, 9);   // thứ hai 09/11/2026, ngày giá lên tuần 2
+var KET = '30/11';                 // hết 30/11 là giá dừng lại ở mức cuối
 
 function giaFmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ'; }
 function giaTien(t) { return GIA.base + GIA.step * (t - 1); }
@@ -1228,7 +1229,8 @@ function giaNhan(t) {
   };
   if (t <= 1) return 'tới ' + hai(MOC - 86400000);
   var batDau = MOC + (t - 2) * 604800000;
-  return (t === GIA.soTuan ? 'từ ' : '') + hai(batDau);
+  if (t === GIA.soTuan) return hai(batDau) + ' tới ' + KET;
+  return hai(batDau);
 }
 
 function giaRow(cls, tag, t, chip) {
