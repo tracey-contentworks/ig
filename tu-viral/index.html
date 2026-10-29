@@ -1083,7 +1083,7 @@
     <div class="ladder" id="bang-tuan">
 <div class="ladder-row now"><span class="ladder-when"><span class="ladder-now-tag">tuần này</span>tới 08/11</span><span class="ladder-right"><span class="ladder-price">2.500.000đ</span></span></div><div class="ladder-row next"><span class="ladder-when"><span class="ladder-now-tag">tuần sau</span>09/11</span><span class="ladder-right"><span class="ladder-step">+100k</span><span class="ladder-price">2.600.000đ</span></span></div><div class="ladder-gap">mỗi tuần nhích lên 100.000đ</div><div class="ladder-row final"><span class="ladder-when"><span class="ladder-now-tag">cao nhất</span>23/11 tới 30/11</span><span class="ladder-right"><span class="ladder-price">2.800.000đ</span></span></div>
     </div>
-    <div class="ladder-close"><span>Sau 30/11</span><b>Dừng ở 2.800.000đ</b></div>
+    <div class="ladder-close"><span>Sau 30/11</span><b>Đóng khoá</b></div>
 
     <div class="why-close">
       <p>Coaching Instagram không phải công việc chính của mình. Đây là kinh nghiệm riêng mình tự đi, tự test mà có, và mình không muốn kéo dài chuyện dạy nó.</p>
@@ -1193,6 +1193,10 @@
       </div>
       <p class="payment-note">Bạn gửi bill qua Instagram, mình sẽ xác nhận và hẹn lịch coaching.</p>
     </div>
+    <div class="closed-note" id="pay-closed" hidden>
+      <p>Khoá đã đóng.</p>
+      <p>No Crying IG chỉ mở tới hết 30/11. Cảm ơn bạn đã ghé trang.</p>
+    </div>
   </div>
 </div>
 
@@ -1207,7 +1211,8 @@
 // ===== Giá theo tuần: tới 08/11 = 2.500.000đ, mỗi thứ hai +100.000đ, mức cuối 2.800.000đ chạy 23/11 tới 30/11 rồi dừng =====
 var GIA = { base: 2500000, step: 100000, soTuan: 4, showPast: 2 };
 var MOC = Date.UTC(2026, 10, 9);   // thứ hai 09/11/2026, ngày giá lên tuần 2
-var KET = '30/11';                 // hết 30/11 là giá dừng lại ở mức cuối
+var KET = '30/11';                 // hết 30/11 là đóng khoá
+var HET = Date.UTC(2026, 11, 1);   // từ 01/12 trở đi: đóng khoá
 
 function giaFmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ'; }
 function giaTien(t) { return GIA.base + GIA.step * (t - 1); }
@@ -1253,10 +1258,21 @@ function giaRender(t) {
 (function () {
   // ?ngay=2026-11-20 để xem trước giá của một ngày bất kỳ
   var q = new URLSearchParams(location.search).get('ngay');
-  var t = giaTuanNay(q ? new Date(q + 'T12:00:00+07:00') : new Date());
+  var now = q ? new Date(q + 'T12:00:00+07:00') : new Date();
+  var t = giaTuanNay(now);
   var tien = giaTien(t);
 
   document.getElementById('bang-tuan').innerHTML = giaRender(t);
+
+  var vn = new Date(now.getTime() + 7 * 3600 * 1000);
+  if (Date.UTC(vn.getUTCFullYear(), vn.getUTCMonth(), vn.getUTCDate()) >= HET) {
+    document.getElementById('pay-open').hidden = true;
+    document.getElementById('pay-closed').hidden = false;
+    document.getElementById('gia-tuan').textContent = 'Khoá đã đóng sau 30/11';
+    document.getElementById('ads-compare').textContent = 'Khoá đã đóng sau 30/11.';
+    document.getElementById('gia-nay').textContent = giaFmt(tien);
+    return;
+  }
   document.getElementById('gia-nay').textContent = giaFmt(tien);
   document.getElementById('gia-tuan').textContent = t === GIA.soTuan ? 'Mức cuối, không tăng nữa' : 'Giá tuần này';
   document.getElementById('pay-amount').innerHTML = giaFmt(tien) +
